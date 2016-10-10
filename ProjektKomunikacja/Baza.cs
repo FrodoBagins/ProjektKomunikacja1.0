@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjektKomunikacja
 {
-
     using System;
 
-    public class Program
+    public class Baza
     {
-        public static void Main(string[] args)
-        {
-           
-
-            Console.WriteLine("Hello world!!!");
-            Console.ReadLine();
-        }
 
         public static void Apka()
         {
@@ -41,7 +33,7 @@ namespace ProjektKomunikacja
             {
                 var meet = new Meet
                 {
-                    
+
                     MeetTime = DateTime.Now,
                     Place = "Palac Zamkowy",
                     Person = "Zbyszko z Bogdanca"
@@ -60,7 +52,7 @@ namespace ProjektKomunikacja
                 {
                     Name = "Pobudka",
                     AlarmTime = DateTime.Now
-                    
+
                 };
                 db.Alarms.Add(alarm);
                 db.SaveChanges();
@@ -94,14 +86,12 @@ namespace ProjektKomunikacja
                     NoteTime = DateTime.Now,
                     Subject = "Lista zakupow",
                     Content = "Mleko, jajka, masło"
-                
+
                 };
                 db.Notes.Add(note);
                 db.SaveChanges();
             }
         }
 
-
     }
-
 }
