@@ -11,7 +11,7 @@ namespace ProjektKomunikacja
     public class Baza
     {
 
-        public static void Apka()
+        public static void AddContact()
         {
             using (var db = new ContactDbContext())
             {
@@ -27,7 +27,7 @@ namespace ProjektKomunikacja
             }
         }
 
-        public static void Apka2()
+        public static void AddMeet()
         {
             using (var db = new MeetDbContext())
             {
@@ -44,7 +44,7 @@ namespace ProjektKomunikacja
             }
         }
 
-        public static void Apka3()
+        public static void AddAlarm()
         {
             using (var db = new AlarmDbContext())
             {
@@ -60,7 +60,7 @@ namespace ProjektKomunikacja
         }
 
 
-        public static void Apka4()
+        public static void AddAddress()
         {
             using (var db = new AddressDbContext())
             {
@@ -77,7 +77,7 @@ namespace ProjektKomunikacja
         }
 
 
-        public static void Apka5()
+        public static void AddNote()
         {
             using (var db = new NoteDbContext())
             {
@@ -90,6 +90,92 @@ namespace ProjektKomunikacja
                 };
                 db.Notes.Add(note);
                 db.SaveChanges();
+            }
+        }
+
+
+
+        public static List<String> MeetList()
+        {
+            using (var db = new MeetDbContext())
+            {
+                List<String> Meetings = new List<String>();
+                foreach (var meet in db.Meetings)
+                {
+                    string temp;
+                    temp = meet.MeetTime + " " + meet.Person + " " + meet.Place;
+                    Meetings.Add(temp);
+                }
+                return Meetings;
+            }        
+        }
+
+
+
+
+        public static List<String> ContactList()
+        {
+            using (var db = new ContactDbContext())
+            {
+                List<String> Contacts = new List<String>();
+
+                foreach (var contact in db.Contacts)
+                {                  
+                    string temp;
+                    temp = contact.FirstName + " " + contact.LastName + " " + contact.Mail + " " + contact.Phone;
+                    Contacts.Add(temp);
+                }
+                return Contacts;
+            }
+        }
+
+
+
+        public static List<String> AlarmList()
+        {
+            using (var db = new AlarmDbContext())
+            {
+                List<String> Alarms = new List<String>();
+
+                foreach (var alarm in db.Alarms)
+                {
+                    string temp;
+                    temp = alarm.AlarmTime + " " + alarm.Name;
+                }
+                return Alarms;
+            }
+        }
+
+
+        public static List<String> AddressList()
+        {
+            using (var db = new AddressDbContext())
+            {
+                List<String> Addresses = new List<String>();
+
+                foreach (var address in db.Addresses)
+                {
+                    string temp;
+                    temp = address.Company + " " + address.Town + " " + address.Street + " " + address.CompPhone;
+                    Addresses.Add(temp);
+                }
+                return Addresses;
+            }
+        }
+
+        public static List<String> NoteList()
+        {
+            using (var db = new NoteDbContext())
+            {
+                List<String> Notes = new List<String>();
+
+                foreach (var note in db.Notes)
+                {
+                    string temp;
+                    temp = note.NoteTime + " " + note.Subject + " " + note.Content;
+                    Notes.Add(temp);
+                }
+                return Notes;
             }
         }
 

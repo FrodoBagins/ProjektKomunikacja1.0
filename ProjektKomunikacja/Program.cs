@@ -13,92 +13,21 @@ namespace ProjektKomunikacja
     {
         public static void Main(string[] args)
         {
-           
 
             Console.WriteLine("Hello world!!!");
             Console.ReadLine();
-        }
 
-        public static void Apka()
-        {
-            using (var db = new ContactDbContext())
+            List<String> Meetings = new List<String>();
+
+            Meetings = Baza.AlarmList();
+
+            foreach (string baza in Meetings)
             {
-                var contact = new Contact
-                {
-                    FirstName = "Nadege",
-                    LastName = "Deroussen",
-                    Phone = 685342542,
-                    Mail = "bart@gm.com"
-                };
-                db.Contacts.Add(contact);
-                db.SaveChanges();
+                Console.WriteLine(baza);
             }
-        }
 
-        public static void Apka2()
-        {
-            using (var db = new MeetDbContext())
-            {
-                var meet = new Meet
-                {
-                    
-                    MeetTime = DateTime.Now,
-                    Place = "Palac Zamkowy",
-                    Person = "Zbyszko z Bogdanca"
+            Console.ReadLine();
 
-                };
-                db.Meetings.Add(meet);
-                db.SaveChanges();
-            }
-        }
-
-        public static void Apka3()
-        {
-            using (var db = new AlarmDbContext())
-            {
-                var alarm = new Alarm
-                {
-                    Name = "Pobudka",
-                    AlarmTime = DateTime.Now
-                    
-                };
-                db.Alarms.Add(alarm);
-                db.SaveChanges();
-            }
-        }
-
-
-        public static void Apka4()
-        {
-            using (var db = new AddressDbContext())
-            {
-                var address = new Address
-                {
-                    Company = "McDonald",
-                    Town = "Whitestok",
-                    Street = "Abbey Road 43",
-                    CompPhone = 555666777
-                };
-                db.Addresses.Add(address);
-                db.SaveChanges();
-            }
-        }
-
-
-        public static void Apka5()
-        {
-            using (var db = new NoteDbContext())
-            {
-                var note = new Note
-                {
-                    NoteTime = DateTime.Now,
-                    Subject = "Lista zakupow",
-                    Content = "Mleko, jajka, masło"
-                
-                };
-                db.Notes.Add(note);
-                db.SaveChanges();
-            }
         }
 
 
