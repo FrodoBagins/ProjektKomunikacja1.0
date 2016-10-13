@@ -14,19 +14,32 @@ namespace ProjektKomunikacja
         public static void Main(string[] args)
         {
 
-            Console.WriteLine("Hello world!!!");
-            Console.ReadLine();
+            //  Console.WindowHeight();
 
-            List<String> Meetings = new List<String>();
+           Console.SetWindowSize(120,30);
 
-            Meetings = Baza.AlarmList();
 
-            foreach (string baza in Meetings)
-            {
-                Console.WriteLine(baza);
-            }
+           // for(int i = 0; i <10;i++)
 
-            Console.ReadLine();
+            Console.Beep(800,1000);
+
+ 
+
+            // Console.SetWindowPosition(1,1);
+
+            Console.SetCursorPosition(13, 13);
+            Console.Write("Witam Studenta!");
+            Console.ReadKey();
+
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("╔ ╗ ╝ ╚");
+
+            Console.SetCursorPosition(25, 7);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Write("ŚćńŁŹżę€ąę~&");
+            Console.ReadKey();
 
         }
 

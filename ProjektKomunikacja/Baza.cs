@@ -141,6 +141,8 @@ namespace ProjektKomunikacja
                 {
                     string temp;
                     temp = alarm.AlarmTime + " " + alarm.Name;
+                    Alarms.Add(temp);
+
                 }
                 return Alarms;
             }

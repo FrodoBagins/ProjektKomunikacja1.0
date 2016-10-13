@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Baza.cs" />
     <Compile Include="DbContext.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
