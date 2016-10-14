@@ -29,17 +29,80 @@ namespace ProjektKomunikacja
 
             Console.SetCursorPosition(13, 13);
             Console.Write("Witam Studenta!");
-            Console.ReadKey();
+           // Console.ReadKey();
 
-            Console.SetCursorPosition(5, 5);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write("╔ ╗ ╝ ╚");
+           // Console.SetCursorPosition(5, 5);
+            //Console.ForegroundColor = ConsoleColor.Blue;
+           // Console.Write("╔ ╗ ╝ ╚");
 
-            Console.SetCursorPosition(25, 7);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.Write("ŚćńŁŹżę€ąę~&");
-            Console.ReadKey();
+           // Console.SetCursorPosition(25, 7);
+           // Console.ForegroundColor = ConsoleColor.Cyan;
+           // Console.BackgroundColor = ConsoleColor.DarkBlue;
+          //  Console.Write("ŚćńŁŹżę€ąę~&");
+            
+            ConsoleKeyInfo keypress;
+
+            keypress = Console.ReadKey();
+
+           
+
+            int col = Console.CursorLeft;
+            int row = Console.CursorTop;
+
+            int  tempCol,tempRow;
+
+
+            while(keypress.Key!= ConsoleKey.F9)
+            {
+
+                if(keypress.Key == ConsoleKey.RightArrow)
+                {
+                    Console.SetCursorPosition(++col, row);
+                }
+
+                if (keypress.Key == ConsoleKey.LeftArrow)
+                {
+                    Console.SetCursorPosition(--col,row);
+                }
+
+
+                if (keypress.Key == ConsoleKey.UpArrow)
+                {
+                    Console.SetCursorPosition(col, --row);
+                }
+
+
+                if (keypress.Key == ConsoleKey.DownArrow)
+                {
+                    Console.SetCursorPosition(col, ++row);
+                }
+
+
+
+                tempRow = Console.CursorTop;
+                tempCol = Console.CursorLeft;
+
+
+                Console.SetCursorPosition(4, 4);
+
+                Console.WriteLine("kolumna: " + tempCol + "wiersz: "+tempRow);
+
+                Console.SetCursorPosition(col, row);
+
+                
+
+
+
+
+                keypress = Console.ReadKey();
+
+                Console.Clear();
+
+            }
+
+         //   Console.ReadKey();
+
+
 
         }
 
