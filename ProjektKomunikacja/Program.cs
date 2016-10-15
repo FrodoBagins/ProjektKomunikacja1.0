@@ -18,7 +18,7 @@ namespace ProjektKomunikacja
 
             Functions.createInterface();
 
-
+            Functions.cleaner();
 
 
             // Console.SetWindowPosition(1,1);
@@ -82,6 +82,11 @@ namespace ProjektKomunikacja
                    // Console.Beep(800, 200);
                 }
 
+
+                if (keypress.Key == ConsoleKey.Spacebar)
+                {
+                    Functions.cleaner();
+                }
 
 
                 tempRow = Console.CursorTop;

@@ -24,27 +24,22 @@ namespace ProjektKomunikacja
 
 
 
-   /*     public static void cleaner()
+        public static void cleaner()
         {
-            for(int i =2;i<=117;i++)
+            for (int i = 2; i <= 117; i++)
             {
 
 
-                for(int j=2;i<=1117)
+                for (int j = 3; j <= 28; j++)
+                {
+                    Console.SetCursorPosition(i, j);
+                    Console.Write("*");
 
+                }
 
 
             }
-
-    */
-            
-
-
-
-
-
         }
-
 
 
 
@@ -87,28 +82,30 @@ namespace ProjektKomunikacja
             }
 
 
-            for (int i = 3; i < 100; i+=16)
+            for (int i = 3; i < 100; i += 16)
             {
-                
+
 
                 Console.SetCursorPosition(i, 0);
                 Console.Write("╔");
 
-                Console.SetCursorPosition(i+13, 0);
+                Console.SetCursorPosition(i + 13, 0);
                 Console.Write("╗");
 
                 Console.SetCursorPosition(i, 1);
                 Console.Write("║");
 
-                Console.SetCursorPosition(i+13, 1);
+                Console.SetCursorPosition(i + 13, 1);
                 Console.Write("║");
 
                 Console.SetCursorPosition(i, 2);
                 Console.Write("╩");
 
-                Console.SetCursorPosition(i+13, 2);
+                Console.SetCursorPosition(i + 13, 2);
                 Console.Write("╩");
             }
         }
     }
+
 }
+
