@@ -89,6 +89,114 @@ namespace ProjektKomunikacja
                 }
 
 
+
+                if (keypress.Key == ConsoleKey.F1)
+                {
+                    Functions.createInterface();
+
+
+                    Console.SetCursorPosition(3, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(19, 2);
+                    Console.Write("╚");
+
+                    for(int i=4;i<19;i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+                if (keypress.Key == ConsoleKey.F2)
+                {
+                    Functions.createInterface();
+
+                    Console.SetCursorPosition(22, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(38, 2);
+                    Console.Write("╚");
+
+                    for (int i = 23; i <38; i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+
+                if (keypress.Key == ConsoleKey.F3)
+                {
+                    Functions.createInterface();
+
+                    Console.SetCursorPosition(41, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(57, 2);
+                    Console.Write("╚");
+
+                    for (int i = 42; i < 57; i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+                if (keypress.Key == ConsoleKey.F4)
+                {
+                    Functions.createInterface();
+
+                    Console.SetCursorPosition(60, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(76, 2);
+                    Console.Write("╚");
+
+                    for (int i = 61; i < 76; i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+
+                if (keypress.Key == ConsoleKey.F5)
+                {
+                    Functions.createInterface();
+
+                    Console.SetCursorPosition(79, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(95, 2);
+                    Console.Write("╚");
+
+                    for (int i = 80; i < 95; i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+
+                if (keypress.Key == ConsoleKey.F6)
+                {
+                    Functions.createInterface();
+
+                    Console.SetCursorPosition(98, 2);
+                    Console.Write("╝");
+
+                    Console.SetCursorPosition(114, 2);
+                    Console.Write("╚");
+
+                    for (int i = 99; i < 114; i++)
+                    {
+                        Console.SetCursorPosition(i, 2);
+                        Console.Write(" ");
+                    }
+                }
+
+
                 tempRow = Console.CursorTop;
                 tempCol = Console.CursorLeft;
 
@@ -100,10 +208,6 @@ namespace ProjektKomunikacja
                 Console.SetCursorPosition(col, row);
 
                 
-
-
-
-
                 keypress = Console.ReadKey();
 
          

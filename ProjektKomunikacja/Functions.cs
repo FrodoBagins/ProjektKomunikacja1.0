@@ -33,7 +33,7 @@ namespace ProjektKomunikacja
                 for (int j = 3; j <= 28; j++)
                 {
                     Console.SetCursorPosition(i, j);
-                    Console.Write("*");
+                    Console.Write(" ");
 
                 }
 
@@ -82,28 +82,51 @@ namespace ProjektKomunikacja
             }
 
 
-            for (int i = 3; i < 100; i += 16)
+            for (int i = 3; i < 100; i += 19)
             {
 
 
                 Console.SetCursorPosition(i, 0);
                 Console.Write("╔");
 
-                Console.SetCursorPosition(i + 13, 0);
+                Console.SetCursorPosition(i + 16, 0);
                 Console.Write("╗");
 
                 Console.SetCursorPosition(i, 1);
                 Console.Write("║");
 
-                Console.SetCursorPosition(i + 13, 1);
+                Console.SetCursorPosition(i + 16, 1);
                 Console.Write("║");
 
                 Console.SetCursorPosition(i, 2);
                 Console.Write("╩");
 
-                Console.SetCursorPosition(i + 13, 2);
+                Console.SetCursorPosition(i + 16, 2);
                 Console.Write("╩");
             }
+
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.SetCursorPosition(4, 1);
+            Console.Write("  [F1] Start");
+
+            Console.SetCursorPosition(23, 1);
+            Console.Write(" [F2] Kontakty");
+
+            Console.SetCursorPosition(42, 1);
+            Console.Write("[F3] Spotkania");
+
+            Console.SetCursorPosition(61, 1);
+            Console.Write("  [F4] Adresy");
+
+            Console.SetCursorPosition(80, 1);
+            Console.Write("[F5] Alarmy");
+
+            Console.SetCursorPosition(99, 1);
+            Console.Write("[F6] Notatki");
+
+
         }
     }
 
