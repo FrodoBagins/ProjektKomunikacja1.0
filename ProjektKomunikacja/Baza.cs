@@ -103,7 +103,7 @@ namespace ProjektKomunikacja
                 foreach (var meet in db.Meetings)
                 {
                     string temp;
-                    temp = meet.MeetTime + " " + meet.Person + " " + meet.Place;
+                    temp = meet.MeetTime + "\n " + meet.Person + "\n " + meet.Place;
                     Meetings.Add(temp);
                 }
                 return Meetings;

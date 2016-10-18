@@ -112,6 +112,9 @@ namespace ProjektKomunikacja
                 {
                     Functions.createInterface();
 
+                    Functions.createContactInterface();
+
+
                     Console.SetCursorPosition(22, 2);
                     Console.Write("╝");
 
@@ -130,6 +133,10 @@ namespace ProjektKomunikacja
                 {
                     Functions.createInterface();
 
+                    Functions.cleaner();
+
+                    Functions.createKalendarzInterface();
+
                     Console.SetCursorPosition(41, 2);
                     Console.Write("╝");
 
@@ -141,6 +148,13 @@ namespace ProjektKomunikacja
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
                     }
+
+                //    DateTime data = new DateTime(2016, 10, 1);
+
+                 //   new Calendar(data);
+
+                        
+
                 }
 
                 if (keypress.Key == ConsoleKey.F4)
@@ -164,6 +178,10 @@ namespace ProjektKomunikacja
                 if (keypress.Key == ConsoleKey.F5)
                 {
                     Functions.createInterface();
+
+                    Functions.cleaner();
+
+                    Functions.createAlarmInterface();
 
                     Console.SetCursorPosition(79, 2);
                     Console.Write("╝");

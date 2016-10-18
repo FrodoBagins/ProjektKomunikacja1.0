@@ -43,6 +43,79 @@ namespace ProjektKomunikacja
 
 
 
+
+        public static void createKalendarzInterface()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(5, 5);
+
+            List<String> Meetings = new List<String>();
+
+            Meetings = Baza.MeetList();
+
+            foreach (string baza in Meetings)
+            {
+                Console.WriteLine(baza);
+            }
+
+            DateTime data = new DateTime(2016, 10, 1);
+
+            new Calendar(data);
+
+
+            //   Console.ReadLine();
+
+        }
+
+
+        public static void createAlarmInterface()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(5, 5);
+
+            List<String> Meetings = new List<String>();
+
+            Meetings = Baza.AlarmList();
+
+            foreach (string baza in Meetings)
+            {
+                Console.WriteLine(baza);
+            }
+          //  Console.ReadLine();
+
+        }
+
+
+        public static void createContactInterface()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(5, 5);
+
+            int i = 5;
+
+            List<String> Meetings = new List<String>();
+
+            Meetings = Baza.ContactList();
+
+            foreach (string baza in Meetings)
+            {
+                Console.WriteLine(baza);
+
+                i += 5;
+
+                Console.SetCursorPosition(5, i);
+
+            }
+            //  Console.ReadLine();
+
+        }
+
+
+
+
         public static void createInterface()
         {
 
@@ -129,6 +202,10 @@ namespace ProjektKomunikacja
 
         }
     }
+    
+
+
+    
 
 }
 
