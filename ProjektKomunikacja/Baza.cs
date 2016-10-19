@@ -103,7 +103,7 @@ namespace ProjektKomunikacja
                 foreach (var meet in db.Meetings)
                 {
                     string temp;
-                    temp = meet.MeetTime + "\n " + meet.Person + "\n " + meet.Place;
+                    temp = meet.MeetTime + " " + meet.Person + " " + meet.Place;
                     Meetings.Add(temp);
                 }
                 return Meetings;
@@ -139,8 +139,10 @@ namespace ProjektKomunikacja
 
                 foreach (var alarm in db.Alarms)
                 {
-                    string temp;
-                    temp = alarm.AlarmTime + " " + alarm.Name;
+                    string temp, date,time;
+                    time = alarm.AlarmTime.ToShortTimeString();
+                    date = alarm.AlarmTime.ToShortDateString();
+                    temp = "Nazwa alarmu: " + alarm.Name + " Data: "+date + " Czas: "+time ;
                     Alarms.Add(temp);
 
                 }
@@ -158,7 +160,7 @@ namespace ProjektKomunikacja
                 foreach (var address in db.Addresses)
                 {
                     string temp;
-                    temp = address.Company + " " + address.Town + " " + address.Street + " " + address.CompPhone;
+                    temp ="Nazwa firmy: "+ address.Company + " Miasto: " + address.Town + " Ulica: " + address.Street + " Tel.:" + address.CompPhone;
                     Addresses.Add(temp);
                 }
                 return Addresses;
@@ -173,8 +175,9 @@ namespace ProjektKomunikacja
 
                 foreach (var note in db.Notes)
                 {
-                    string temp;
-                    temp = note.NoteTime + " " + note.Subject + " " + note.Content;
+                    string temp,date;
+                    date = note.NoteTime.ToShortDateString();
+                    temp = "Data dodania: "+date + ", " + note.Subject + ": " + note.Content;
                     Notes.Add(temp);
                 }
                 return Notes;

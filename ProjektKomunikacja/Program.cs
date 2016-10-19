@@ -14,34 +14,19 @@ namespace ProjektKomunikacja
         public static void Main(string[] args)
         {
 
-            //  Console.WindowHeight();
-
             Functions.createInterface();
 
-            Functions.cleaner();
-
-
-            // Console.SetWindowPosition(1,1);
+                    
 
             Console.SetCursorPosition(13, 13);
             Console.Write("Witam Studenta!");
-           // Console.ReadKey();
-
-           // Console.SetCursorPosition(5, 5);
-            //Console.ForegroundColor = ConsoleColor.Blue;
-           // Console.Write("╔ ╗ ╝ ╚");
-
-           // Console.SetCursorPosition(25, 7);
-           // Console.ForegroundColor = ConsoleColor.Cyan;
-           // Console.BackgroundColor = ConsoleColor.DarkBlue;
-          //  Console.Write("ŚćńŁŹżę€ąę~&");
-            
+        
+           
             ConsoleKeyInfo keypress;
 
             keypress = Console.ReadKey();
 
            
-
             int col = Console.CursorLeft;
             int row = Console.CursorTop;
 
@@ -59,27 +44,27 @@ namespace ProjektKomunikacja
                 if(keypress.Key == ConsoleKey.RightArrow )
                 {
                     Console.SetCursorPosition(++col, row);
-                   // Console.Beep(800, 200);
+                   
                 }
 
                 if (keypress.Key == ConsoleKey.LeftArrow)
                 {
                     Console.SetCursorPosition(--col,row);
-                    //Console.Beep(800, 200);
+                    
                 }
 
 
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
                     Console.SetCursorPosition(col, --row);
-                  //  Console.Beep(800, 200);
+                  
                 }
 
 
                 if (keypress.Key == ConsoleKey.DownArrow)
                 {
                     Console.SetCursorPosition(col, ++row);
-                   // Console.Beep(800, 200);
+                   
                 }
 
 
@@ -89,11 +74,12 @@ namespace ProjektKomunikacja
                 }
 
 
-
+                //Start
                 if (keypress.Key == ConsoleKey.F1)
                 {
-                    Functions.createInterface();
+                    
 
+                    Functions.menuInterface();
 
                     Console.SetCursorPosition(3, 2);
                     Console.Write("╝");
@@ -106,14 +92,19 @@ namespace ProjektKomunikacja
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
                     }
+
+                    Functions.cleaner();
+                    // Functions.createStartInterface();
                 }
 
+
+                //Kontakty
                 if (keypress.Key == ConsoleKey.F2)
                 {
-                    Functions.createInterface();
+       
 
-                    Functions.createContactInterface();
-
+                    Functions.menuInterface();
+                   
 
                     Console.SetCursorPosition(22, 2);
                     Console.Write("╝");
@@ -126,16 +117,22 @@ namespace ProjektKomunikacja
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
                     }
-                }
-
-
-                if (keypress.Key == ConsoleKey.F3)
-                {
-                    Functions.createInterface();
 
                     Functions.cleaner();
 
-                    Functions.createKalendarzInterface();
+                    Functions.createContactInterface();
+
+
+                }
+
+
+                //Spotkania
+                if (keypress.Key == ConsoleKey.F3)
+                {
+                    
+                    Functions.menuInterface();
+
+
 
                     Console.SetCursorPosition(41, 2);
                     Console.Write("╝");
@@ -149,17 +146,25 @@ namespace ProjektKomunikacja
                         Console.Write(" ");
                     }
 
-                //    DateTime data = new DateTime(2016, 10, 1);
+                    Functions.cleaner();
 
-                 //   new Calendar(data);
+                    Functions.createMeetInterface();
 
-                        
+                    //    DateTime data = new DateTime(2016, 10, 1);
+
+                    //   new Calendar(data);
+
+
 
                 }
 
+
+
+                //Adresy
                 if (keypress.Key == ConsoleKey.F4)
                 {
-                    Functions.createInterface();
+                    
+                    Functions.menuInterface();
 
                     Console.SetCursorPosition(60, 2);
                     Console.Write("╝");
@@ -172,16 +177,19 @@ namespace ProjektKomunikacja
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
                     }
+
+
+                    Functions.cleaner();
+                    Functions.createAddressInterface();
                 }
 
 
+
+                //Alarmy
                 if (keypress.Key == ConsoleKey.F5)
                 {
-                    Functions.createInterface();
 
-                    Functions.cleaner();
-
-                    Functions.createAlarmInterface();
+                    Functions.menuInterface();
 
                     Console.SetCursorPosition(79, 2);
                     Console.Write("╝");
@@ -194,12 +202,20 @@ namespace ProjektKomunikacja
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
                     }
+
+                    Functions.cleaner();
+
+                    Functions.createAlarmInterface();
+
+
                 }
 
 
+                //Notatki
                 if (keypress.Key == ConsoleKey.F6)
-                {
-                    Functions.createInterface();
+                {                   
+
+                    Functions.menuInterface();
 
                     Console.SetCursorPosition(98, 2);
                     Console.Write("╝");
@@ -211,17 +227,24 @@ namespace ProjektKomunikacja
                     {
                         Console.SetCursorPosition(i, 2);
                         Console.Write(" ");
+
                     }
+
+                    Functions.cleaner();
+
+                    Functions.createNoteInterface();
                 }
+
+
 
 
                 tempRow = Console.CursorTop;
                 tempCol = Console.CursorLeft;
 
 
-                Console.SetCursorPosition(4, 4);
+                Console.SetCursorPosition(93, 27);
 
-                Console.WriteLine("kolumna: " + tempCol + "wiersz: "+tempRow);
+                Console.WriteLine("kolumna: " + tempCol + " wiersz: "+tempRow+" ");
 
                 Console.SetCursorPosition(col, row);
 

@@ -9,18 +9,129 @@ namespace ProjektKomunikacja
     class Functions
     {
 
-        public static void drukuj()
+        /* 
+          Funckje do wypisywania
+        */
+
+        public static void printAlarm()
+        {
+            List<String>Alarms = new List<String>();
+
+            Alarms = Baza.AlarmList();
+
+            int i,j;
+
+            i = Console.CursorLeft;
+            j = Console.CursorTop;
+
+            foreach (string baza in Alarms)
+            {
+
+                Console.SetCursorPosition(i, j);
+                j += 2;
+
+                Console.WriteLine(baza);
+                
+
+            }
+            
+        }
+
+
+        public static void printContact()
+        {
+            List<String> Contacts = new List<String>();
+
+            Contacts = Baza.ContactList();
+
+            int i, j;
+
+            i = Console.CursorLeft;
+            j = Console.CursorTop;
+
+            foreach (string baza in Contacts)
+            {
+
+                Console.SetCursorPosition(i, j);
+                j += 2;
+                Console.WriteLine(baza);
+            }
+            
+        }
+
+
+        public static void printMeet()
         {
             List<String> Meetings = new List<String>();
 
-            Meetings = Baza.AlarmList();
+            Meetings = Baza.MeetList();
+
+            int i, j;
+
+            i = Console.CursorLeft;
+            j = Console.CursorTop;
 
             foreach (string baza in Meetings)
             {
+                Console.SetCursorPosition(i, j);
+                j += 2;
                 Console.WriteLine(baza);
             }
-            Console.ReadLine();
+            
         }
+
+
+        public static void printAddress()
+        {
+            List<String> Addresses = new List<String>();
+
+            Addresses = Baza.AddressList();
+
+            int i, j;
+
+            i = Console.CursorLeft;
+            j = Console.CursorTop;
+
+            foreach (string baza in Addresses)
+            {
+
+                Console.SetCursorPosition(i, j);
+                j += 2;
+                Console.WriteLine(baza);
+            }
+            
+        }
+
+
+        public static void printNotes()
+        {
+            List<String>Notes = new List<String>();
+
+            Notes = Baza.NoteList();
+
+            int i, j;
+
+            i = Console.CursorLeft;
+            j = Console.CursorTop;
+
+            foreach (string baza in Notes)
+            {
+                Console.SetCursorPosition(i, j);
+                j += 2;
+                Console.WriteLine(baza);
+            }
+            
+
+            
+        }
+
+
+
+
+        /*
+          Fukncja do czyszczenia
+        */
+
 
 
 
@@ -34,9 +145,7 @@ namespace ProjektKomunikacja
                 {
                     Console.SetCursorPosition(i, j);
                     Console.Write(" ");
-
                 }
-
 
             }
         }
@@ -44,24 +153,17 @@ namespace ProjektKomunikacja
 
 
 
-        public static void createKalendarzInterface()
+        public static void createMeetInterface()
         {
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
-            List<String> Meetings = new List<String>();
+            Functions.printMeet();
 
-            Meetings = Baza.MeetList();
+          //  DateTime data = new DateTime(2016, 10, 1);
 
-            foreach (string baza in Meetings)
-            {
-                Console.WriteLine(baza);
-            }
-
-            DateTime data = new DateTime(2016, 10, 1);
-
-            new Calendar(data);
+          //  new Calendar(data);
 
 
             //   Console.ReadLine();
@@ -75,15 +177,19 @@ namespace ProjektKomunikacja
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
-            List<String> Meetings = new List<String>();
-
-            Meetings = Baza.AlarmList();
-
-            foreach (string baza in Meetings)
-            {
-                Console.WriteLine(baza);
-            }
+            Functions.printAlarm();
           //  Console.ReadLine();
+
+        }
+
+        public static void createNoteInterface()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(5, 5);
+
+            Functions.printNotes();
+            //  Console.ReadLine();
 
         }
 
@@ -94,25 +200,37 @@ namespace ProjektKomunikacja
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
-            int i = 5;
-
-            List<String> Meetings = new List<String>();
-
-            Meetings = Baza.ContactList();
-
-            foreach (string baza in Meetings)
-            {
-                Console.WriteLine(baza);
-
-                i += 5;
-
-                Console.SetCursorPosition(5, i);
-
-            }
+            Functions.printContact();
             //  Console.ReadLine();
 
         }
 
+
+        public static void createAddressInterface()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(5, 5);
+
+            Functions.printAddress();
+            //  Console.ReadLine();
+
+        }
+
+
+
+        public static void menuInterface()
+        {
+
+            for(int i = 2; i<118;i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write("═");
+
+            }
+
+
+        }
 
 
 
@@ -194,10 +312,12 @@ namespace ProjektKomunikacja
             Console.Write("  [F4] Adresy");
 
             Console.SetCursorPosition(80, 1);
-            Console.Write("[F5] Alarmy");
+            Console.Write(" [F5] Alarmy");
 
             Console.SetCursorPosition(99, 1);
-            Console.Write("[F6] Notatki");
+            Console.Write(" [F6] Notatki");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
 
         }
