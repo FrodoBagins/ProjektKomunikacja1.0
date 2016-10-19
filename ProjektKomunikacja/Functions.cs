@@ -28,10 +28,16 @@ namespace ProjektKomunikacja
             {
 
                 Console.SetCursorPosition(i, j);
-                j += 2;
-
                 Console.WriteLine(baza);
-                
+                Console.SetCursorPosition(i, j + 1);
+                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                for (int k = i; k < 40; k++)
+                {
+                    Console.SetCursorPosition(k, j + 2);
+                    Console.Write("═");
+                }
+                j += 4;
+
 
             }
             
@@ -53,8 +59,15 @@ namespace ProjektKomunikacja
             {
 
                 Console.SetCursorPosition(i, j);
-                j += 2;
                 Console.WriteLine(baza);
+                Console.SetCursorPosition(i, j + 1);
+                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                for (int k = i; k < 40; k++)
+                {
+                    Console.SetCursorPosition(k, j + 2);
+                    Console.Write("═");
+                }
+                j += 4;
             }
             
         }
@@ -73,9 +86,16 @@ namespace ProjektKomunikacja
 
             foreach (string baza in Meetings)
             {
-                Console.SetCursorPosition(i, j);
-                j += 2;
+                Console.SetCursorPosition(i, j);               
                 Console.WriteLine(baza);
+                Console.SetCursorPosition(i, j + 1);
+                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                for(int k=i;k<40;k++)
+                {
+                    Console.SetCursorPosition(k, j + 2);
+                    Console.Write("═");
+                }
+                j += 4;
             }
             
         }
@@ -96,8 +116,15 @@ namespace ProjektKomunikacja
             {
 
                 Console.SetCursorPosition(i, j);
-                j += 2;
                 Console.WriteLine(baza);
+                Console.SetCursorPosition(i, j + 1);
+                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                for (int k = i; k < 40; k++)
+                {
+                    Console.SetCursorPosition(k, j + 2);
+                    Console.Write("═");
+                }
+                j += 4;
             }
             
         }
@@ -117,8 +144,15 @@ namespace ProjektKomunikacja
             foreach (string baza in Notes)
             {
                 Console.SetCursorPosition(i, j);
-                j += 2;
                 Console.WriteLine(baza);
+                Console.SetCursorPosition(i, j + 1);
+                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                for (int k = i; k < 40; k++)
+                {
+                    Console.SetCursorPosition(k, j + 2);
+                    Console.Write("═");
+                }
+                j += 4;
             }
             
 
@@ -150,71 +184,81 @@ namespace ProjektKomunikacja
             }
         }
 
-
+        public static void addButton()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(99, 4);
+            Console.Write("[F7]-Dodaj");
+    
+        }
 
 
         public static void createMeetInterface()
         {
-
+            Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
             Functions.printMeet();
+
+            Functions.appMovement(3);
+
+            
 
           //  DateTime data = new DateTime(2016, 10, 1);
 
           //  new Calendar(data);
 
 
-            //   Console.ReadLine();
+            
 
         }
 
 
         public static void createAlarmInterface()
         {
-
+            Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
             Functions.printAlarm();
-          //  Console.ReadLine();
 
+            Functions.appMovement(3);
         }
 
         public static void createNoteInterface()
         {
-
+            Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
             Functions.printNotes();
-            //  Console.ReadLine();
 
+            Functions.appMovement(3);
         }
 
 
         public static void createContactInterface()
         {
-
+            Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
             Functions.printContact();
-            //  Console.ReadLine();
 
+            Functions.appMovement(3);
         }
 
 
         public static void createAddressInterface()
         {
-
+            Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
             Functions.printAddress();
-            //  Console.ReadLine();
 
+            Functions.appMovement(3);
         }
 
 
@@ -232,6 +276,71 @@ namespace ProjektKomunikacja
 
         }
 
+
+        public static void appMovement(int FuncNumb)
+        {
+
+            ConsoleKeyInfo keypress;
+            Console.SetCursorPosition(6, 6);
+
+            int col = 6, row = 6;
+
+            keypress = Console.ReadKey();
+
+            while (keypress.Key != ConsoleKey.F9)
+            {
+
+                if (keypress.Key == ConsoleKey.RightArrow && col==6)
+                {
+                    Console.SetCursorPosition(col+=15, row);
+
+                }
+
+                if (keypress.Key == ConsoleKey.RightArrow && col == 21)
+                {
+                    Console.SetCursorPosition(col, row);
+
+                }
+
+
+                if (keypress.Key == ConsoleKey.LeftArrow && col==21)
+                {
+                    Console.SetCursorPosition(col-=15, row);
+
+                }
+
+                if (keypress.Key == ConsoleKey.LeftArrow && col == 6)
+                {
+                    Console.SetCursorPosition(col, row);
+
+                }
+
+
+                if (keypress.Key == ConsoleKey.UpArrow && row!=6)
+                {
+                    Console.SetCursorPosition(col, row-=4);
+
+                }
+
+
+                if (keypress.Key == ConsoleKey.UpArrow && row== 6)
+                {
+                    Console.SetCursorPosition(col, row);
+
+                }
+
+
+
+                if (keypress.Key == ConsoleKey.DownArrow)
+                {
+                    Console.SetCursorPosition(col, row+=4);
+
+                }
+
+                keypress = Console.ReadKey();
+
+            }
+        }
 
 
         public static void createInterface()

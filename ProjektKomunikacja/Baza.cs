@@ -100,11 +100,16 @@ namespace ProjektKomunikacja
             using (var db = new MeetDbContext())
             {
                 List<String> Meetings = new List<String>();
+                
+
                 foreach (var meet in db.Meetings)
                 {
-                    string temp;
-                    temp = meet.MeetTime + " " + meet.Person + " " + meet.Place;
+                    string temp, date, time;
+                    time = meet.MeetTime.ToShortTimeString();
+                    date = meet.MeetTime.ToShortDateString();
+                    temp ="Dzien: " + date+" Godzina: "+ time+" Z kim: " + meet.Person + " Gdzie:" + meet.Place;
                     Meetings.Add(temp);
+
                 }
                 return Meetings;
             }        
@@ -119,10 +124,13 @@ namespace ProjektKomunikacja
             {
                 List<String> Contacts = new List<String>();
 
+                int counter=1;
+
                 foreach (var contact in db.Contacts)
                 {                  
                     string temp;
-                    temp = contact.FirstName + " " + contact.LastName + " " + contact.Mail + " " + contact.Phone;
+                    temp ="Imie: "+ contact.FirstName + " Nazwisko: " + contact.LastName + " Email: " + contact.Mail + " Tel.: " + contact.Phone+" Counter: "+counter;
+                    ++counter;
                     Contacts.Add(temp);
                 }
                 return Contacts;
