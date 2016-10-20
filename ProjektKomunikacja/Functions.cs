@@ -13,6 +13,53 @@ namespace ProjektKomunikacja
           Funckje do wypisywania
         */
 
+        public static void createFrame(int minCol,int minRow,int maxCol,int maxRow)
+        {
+            for (int i = minRow+1; i < maxRow ; ++i)
+            {
+                Console.SetCursorPosition(minCol, i);
+                Console.Write("║");
+                Console.SetCursorPosition(maxCol, i);
+                Console.Write("║");
+
+            }
+
+            for (int i = minCol+1; i < maxCol; ++i)
+            {
+                Console.SetCursorPosition(i, minRow);
+                Console.Write("═");
+                Console.SetCursorPosition(i, maxRow);
+                Console.Write("═");
+              //  Console.SetCursorPosition(i, 2);
+              //  Console.Write("═");
+            }
+
+            Console.SetCursorPosition(minCol, minRow);
+            Console.Write("╔");
+            Console.SetCursorPosition(maxCol, minRow);
+            Console.Write("╗");
+            Console.SetCursorPosition(minCol, maxRow);
+            Console.Write("╚");
+            Console.SetCursorPosition(maxCol, maxRow);
+            Console.Write("╝");
+
+            for (int i = minCol+1; i < maxCol; i++)
+            {
+                for (int j = minRow+1; j < maxRow; j++)
+                {
+                    Console.SetCursorPosition(i, j);
+                    Console.Write(" ");
+                }
+
+            }
+
+
+
+        }
+
+
+
+
         public static void printAlarm()
         {
             List<String>Alarms = new List<String>();
@@ -96,8 +143,7 @@ namespace ProjektKomunikacja
                     Console.Write("═");
                 }
                 j += 4;
-            }
-            
+            }           
         }
 
 
@@ -114,7 +160,6 @@ namespace ProjektKomunikacja
 
             foreach (string baza in Addresses)
             {
-
                 Console.SetCursorPosition(i, j);
                 Console.WriteLine(baza);
                 Console.SetCursorPosition(i, j + 1);
@@ -457,9 +502,56 @@ namespace ProjektKomunikacja
 
                 }
 
+
+                //Start
+                if (keypress.Key == ConsoleKey.F1)
+                {
+                    Functions.createStartInterface();
+                }
+
+                //Kontakty
+                if (keypress.Key == ConsoleKey.F2)
+                {
+                    Functions.createContactInterface();
+                }
+
+                //Spotkania
+                if (keypress.Key == ConsoleKey.F3)
+                {
+                    Functions.createMeetInterface();
+
+                    //    DateTime data = new DateTime(2016, 10, 1);
+
+                    //   new Calendar(data);
+                }
+
+                //Adresy
+                if (keypress.Key == ConsoleKey.F4)
+                {
+                    Functions.createAddressInterface();
+                }
+
+                //Alarmy
+                if (keypress.Key == ConsoleKey.F5)
+                {
+                    Functions.createAlarmInterface();
+                }
+
+                //Notatki
+                if (keypress.Key == ConsoleKey.F6)
+                {
+                    Functions.createNoteInterface();
+                }
+
+
+
                 keypress = Console.ReadKey();
 
             }
+
+            Environment.Exit(0);
+
+
         }
 
 
@@ -551,10 +643,5 @@ namespace ProjektKomunikacja
 
         }
     }
-    
-
-
-    
-
 }
 
