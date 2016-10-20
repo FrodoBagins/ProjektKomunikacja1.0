@@ -193,8 +193,52 @@ namespace ProjektKomunikacja
         }
 
 
+        public static void createStartInterface()
+        {
+            Functions.menuInterface();
+
+            Console.SetCursorPosition(3, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(19, 2);
+            Console.Write("╚");
+
+            for (int i = 4; i < 19; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+            }
+
+            Functions.cleaner();
+
+
+
+
+        }
+
+
         public static void createMeetInterface()
         {
+            //
+            Functions.menuInterface();
+
+
+
+            Console.SetCursorPosition(41, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(57, 2);
+            Console.Write("╚");
+
+            for (int i = 42; i < 57; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+            }
+
+            Functions.cleaner();
+            //
+
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
@@ -217,6 +261,24 @@ namespace ProjektKomunikacja
 
         public static void createAlarmInterface()
         {
+            //
+            Functions.menuInterface();
+
+            Console.SetCursorPosition(79, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(95, 2);
+            Console.Write("╚");
+
+            for (int i = 80; i < 95; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+            }
+
+            Functions.cleaner();
+            //
+
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
@@ -228,6 +290,26 @@ namespace ProjektKomunikacja
 
         public static void createNoteInterface()
         {
+            //
+            Functions.menuInterface();
+
+            Console.SetCursorPosition(98, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(114, 2);
+            Console.Write("╚");
+
+            for (int i = 99; i < 114; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+
+            }
+
+            Functions.cleaner();
+//
+            
+
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
@@ -240,6 +322,25 @@ namespace ProjektKomunikacja
 
         public static void createContactInterface()
         {
+            //
+            Functions.menuInterface();
+
+
+            Console.SetCursorPosition(22, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(38, 2);
+            Console.Write("╚");
+
+            for (int i = 23; i < 38; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+            }
+
+            Functions.cleaner();
+            //
+
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
@@ -252,6 +353,25 @@ namespace ProjektKomunikacja
 
         public static void createAddressInterface()
         {
+            //
+            Functions.menuInterface();
+
+            Console.SetCursorPosition(60, 2);
+            Console.Write("╝");
+
+            Console.SetCursorPosition(76, 2);
+            Console.Write("╚");
+
+            for (int i = 61; i < 76; i++)
+            {
+                Console.SetCursorPosition(i, 2);
+                Console.Write(" ");
+            }
+
+
+            Functions.cleaner();
+            //
+
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);

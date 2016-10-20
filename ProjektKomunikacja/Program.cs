@@ -77,8 +77,11 @@ namespace ProjektKomunikacja
                 //Start
                 if (keypress.Key == ConsoleKey.F1)
                 {
-                    
 
+                    Functions.createStartInterface();
+
+
+                    /*
                     Functions.menuInterface();
 
                     Console.SetCursorPosition(3, 2);
@@ -93,7 +96,7 @@ namespace ProjektKomunikacja
                         Console.Write(" ");
                     }
 
-                    Functions.cleaner();
+                    Functions.cleaner();   */
                     // Functions.createStartInterface();
                 }
 
@@ -101,8 +104,8 @@ namespace ProjektKomunikacja
                 //Kontakty
                 if (keypress.Key == ConsoleKey.F2)
                 {
-       
-
+                  
+                    /*
                     Functions.menuInterface();
                    
 
@@ -118,7 +121,7 @@ namespace ProjektKomunikacja
                         Console.Write(" ");
                     }
 
-                    Functions.cleaner();
+                    Functions.cleaner();  */
 
                     Functions.createContactInterface();
 
@@ -129,7 +132,7 @@ namespace ProjektKomunikacja
                 //Spotkania
                 if (keypress.Key == ConsoleKey.F3)
                 {
-                    
+                    /*
                     Functions.menuInterface();
 
 
@@ -147,7 +150,7 @@ namespace ProjektKomunikacja
                     }
 
                     Functions.cleaner();
-
+                    */
                     Functions.createMeetInterface();
 
                     //    DateTime data = new DateTime(2016, 10, 1);
@@ -163,7 +166,7 @@ namespace ProjektKomunikacja
                 //Adresy
                 if (keypress.Key == ConsoleKey.F4)
                 {
-                    
+                    /*
                     Functions.menuInterface();
 
                     Console.SetCursorPosition(60, 2);
@@ -180,6 +183,8 @@ namespace ProjektKomunikacja
 
 
                     Functions.cleaner();
+                    */
+
                     Functions.createAddressInterface();
                 }
 
@@ -188,7 +193,7 @@ namespace ProjektKomunikacja
                 //Alarmy
                 if (keypress.Key == ConsoleKey.F5)
                 {
-
+                    /*
                     Functions.menuInterface();
 
                     Console.SetCursorPosition(79, 2);
@@ -204,7 +209,7 @@ namespace ProjektKomunikacja
                     }
 
                     Functions.cleaner();
-
+                    */
                     Functions.createAlarmInterface();
 
 
@@ -214,7 +219,7 @@ namespace ProjektKomunikacja
                 //Notatki
                 if (keypress.Key == ConsoleKey.F6)
                 {                   
-
+                    /*
                     Functions.menuInterface();
 
                     Console.SetCursorPosition(98, 2);
@@ -231,6 +236,8 @@ namespace ProjektKomunikacja
                     }
 
                     Functions.cleaner();
+
+                   */
 
                     Functions.createNoteInterface();
                 }
