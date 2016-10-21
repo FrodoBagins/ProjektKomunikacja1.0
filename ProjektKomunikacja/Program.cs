@@ -16,7 +16,16 @@ namespace ProjektKomunikacja
 
             Functions.createInterface();
 
-         //   Functions.createFrame(30, 7, 80, 22);
+
+            //    DateTime data = new DateTime(2016, 10, 1);
+
+           //     new Calendar(data,3);
+
+
+
+
+
+            //   Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(13, 13);
             Console.Write("Witam Studenta!");

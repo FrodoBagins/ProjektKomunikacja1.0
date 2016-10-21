@@ -59,7 +59,69 @@ namespace ProjektKomunikacja
         }
 
 
+        public static void addMeetInterface(DateTime data)
+        {
+            Functions.createFrame(30, 4, 80, 22);
 
+
+
+            Console.SetCursorPosition(45,6);
+            Console.Write("Dodaj Nowe Spotkanie");
+
+            string datash = data.ToShortDateString();
+
+
+            Console.SetCursorPosition(32, 9);
+            Console.Write("         Data:"+datash);
+
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write("      Godzina:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("        Minut:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write("      Miejsce:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("        Z kim:");
+
+
+            Console.SetCursorPosition(46, 11);
+            string godzinas = Console.ReadLine();
+            int godzina = Int32.Parse(godzinas);
+
+            data = data.AddHours(godzina);
+
+            Console.SetCursorPosition(46, 13);
+            string minutas = Console.ReadLine();
+            int minuta = Int32.Parse(minutas);
+
+            data = data.AddMinutes(minuta);
+
+            Console.SetCursorPosition(46, 15);
+            string miejsce = Console.ReadLine();
+
+            Console.SetCursorPosition(46, 17);
+            string osoba = Console.ReadLine();
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Baza.AddMeet(data, osoba, miejsce);
+                Functions.createMeetInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createMeetInterface();
+
+        }
 
 
         /* 
@@ -600,7 +662,13 @@ namespace ProjektKomunikacja
                 if (keypress.Key == ConsoleKey.F7)
                 {
                     if (FuncNumb == 2) Functions.addContactInterface();
-                    //   if (FuncNumb == 3) Functions.addMeetInterface();
+                    if (FuncNumb == 3)
+                    {
+                        DateTime data = DateTime.Now;
+
+                        new Calendar(data, 3);
+
+                    }
                     //   if (FuncNumb == 4) Functions.addAddressInterface();
                     //    if (FuncNumb == 5) Functions.addAlarmInterface();
                     //   if (FuncNumb == 6) Functions.addNoteInterface();

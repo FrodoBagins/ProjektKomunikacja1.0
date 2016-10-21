@@ -27,16 +27,16 @@ namespace ProjektKomunikacja
             }
         }
 
-        public static void AddMeet()
+        public static void AddMeet(DateTime czas,string osoba,string miejsce)
         {
             using (var db = new MeetDbContext())
             {
                 var meet = new Meet
                 {
 
-                    MeetTime = DateTime.Now,
-                    Place = "Palac Zamkowy",
-                    Person = "Zbyszko z Bogdanca"
+                    MeetTime = czas,
+                    Place = miejsce,
+                    Person = osoba
 
                 };
                 db.Meetings.Add(meet);

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace ProjektKomunikacja
 {
     class Calendar
     {
@@ -16,7 +16,7 @@ namespace ConsoleApplication1
 
         public Calendar() { }
 
-        public Calendar(DateTime date)
+        public Calendar(DateTime date,int whichTab)
         {
             Console.SetCursorPosition(0, 0);
             Console.CursorVisible = false;
@@ -146,9 +146,24 @@ namespace ConsoleApplication1
                 }
                 else if (keyInfo.Key == ConsoleKey.Enter)
                 {
-                    Console.SetCursorPosition(1, 20);
-                    Console.WriteLine(dayCounter);
+                    Console.CursorVisible = true;
+
+                    DateTime czas = new DateTime(yrcounter,mthcounter,dayCounter);
+
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+
+                    if (whichTab == 3)
+                    {
+
+
+                        Functions.addMeetInterface(czas);
+
+                    }
+
                     //new Note(new DateTime(yrcounter, mthcounter, dayCounter));
+
+
                 }
                 else /*nie wiem, co tu zrobić :( */
                 {
