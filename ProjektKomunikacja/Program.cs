@@ -16,15 +16,18 @@ namespace ProjektKomunikacja
 
             Functions.createInterface();
 
-            Functions.createFrame(30, 7, 80, 22);
+         //   Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(13, 13);
             Console.Write("Witam Studenta!");
 
 
+       //     Functions.addContactInterface();
+
+
             ConsoleKeyInfo keypress;
 
-            keypress = Console.ReadKey();
+        //    keypress = Console.ReadKey();
            
             int col = Console.CursorLeft;
             int row = Console.CursorTop;
@@ -33,13 +36,20 @@ namespace ProjektKomunikacja
 
           
 
-         //   Console.SetCursorPosition(10, 5);
-         //   string nazwa = Console.ReadLine();
+     /*       Console.SetCursorPosition(10, 5);
+            string nazwa = Console.ReadLine();
 
-         //   Console.SetCursorPosition(10, 6);
-         //   Console.WriteLine(nazwa);
 
-         //   keypress = Console.ReadKey();
+            Console.SetCursorPosition(12, 6);
+            string imie = Console.ReadLine();
+
+            Console.SetCursorPosition(10, 7);
+            Console.WriteLine(nazwa);
+
+            Console.SetCursorPosition(13, 8);
+            Console.WriteLine(imie);            */
+
+            keypress = Console.ReadKey();
 
             while (keypress.Key!= ConsoleKey.F9)
             {

@@ -11,16 +11,16 @@ namespace ProjektKomunikacja
     public class Baza
     {
 
-        public static void AddContact()
+        public static void AddContact(string fName,string lName,int phon,string mail)
         {
             using (var db = new ContactDbContext())
             {
                 var contact = new Contact
                 {
-                    FirstName = "Nadege",
-                    LastName = "Deroussen",
-                    Phone = 685342542,
-                    Mail = "bart@gm.com"
+                    FirstName = fName,
+                    LastName = lName,
+                    Phone = phon,
+                    Mail = mail
                 };
                 db.Contacts.Add(contact);
                 db.SaveChanges();

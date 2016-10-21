@@ -8,6 +8,59 @@ namespace ProjektKomunikacja
 {
     class Functions
     {
+        public static void addContactInterface()
+        {
+
+            Functions.createFrame(30, 7, 80, 22);
+
+            Console.SetCursorPosition(45, 9);
+            Console.Write("Dodaj Nowy Kontakt");
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write("Podaj Nazwisko:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("    Podaj Imie:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write(" Podaj Nr Tel.:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("    Podaj mail:");
+
+            Console.SetCursorPosition(47, 11);
+            string nazwisko = Console.ReadLine();
+
+            Console.SetCursorPosition(47, 13);
+            string imie = Console.ReadLine();
+
+            Console.SetCursorPosition(47, 15);
+            string tel = Console.ReadLine();
+            int telefon = Int32.Parse(tel);
+
+            Console.SetCursorPosition(47, 17);
+            string mail = Console.ReadLine();
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Baza.AddContact(imie, nazwisko, telefon, mail);
+                Functions.createContactInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createContactInterface();
+
+        }
+
+
+
+
 
         /* 
           Funckje do wypisywania
@@ -392,7 +445,7 @@ namespace ProjektKomunikacja
 
             Functions.printContact();
 
-            Functions.appMovement(3);
+            Functions.appMovement(2);
         }
 
 
@@ -505,7 +558,7 @@ namespace ProjektKomunikacja
 
                 //Start
                 if (keypress.Key == ConsoleKey.F1)
-                {
+                {                    
                     Functions.createStartInterface();
                 }
 
@@ -542,6 +595,21 @@ namespace ProjektKomunikacja
                 {
                     Functions.createNoteInterface();
                 }
+
+
+                if (keypress.Key == ConsoleKey.F7)
+                {
+                    if (FuncNumb == 2) Functions.addContactInterface();
+                    //   if (FuncNumb == 3) Functions.addMeetInterface();
+                    //   if (FuncNumb == 4) Functions.addAddressInterface();
+                    //    if (FuncNumb == 5) Functions.addAlarmInterface();
+                    //   if (FuncNumb == 6) Functions.addNoteInterface();
+                }
+
+
+
+
+
 
 
 
