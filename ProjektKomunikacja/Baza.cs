@@ -60,16 +60,16 @@ namespace ProjektKomunikacja
         }
 
 
-        public static void AddAddress()
+        public static void AddAddress(string compName,string townName,string stName,int compPhon)
         {
             using (var db = new AddressDbContext())
             {
                 var address = new Address
                 {
-                    Company = "McDonald",
-                    Town = "Whitestok",
-                    Street = "Abbey Road 43",
-                    CompPhone = 555666777
+                    Company = compName,
+                    Town = townName,
+                    Street = stName,
+                    CompPhone = compPhon
                 };
                 db.Addresses.Add(address);
                 db.SaveChanges();
@@ -77,15 +77,15 @@ namespace ProjektKomunikacja
         }
 
 
-        public static void AddNote()
+        public static void AddNote(string temat,string tresc)
         {
             using (var db = new NoteDbContext())
             {
                 var note = new Note
                 {
                     NoteTime = DateTime.Now,
-                    Subject = "Lista zakupow",
-                    Content = "Mleko, jajka, masło"
+                    Subject = temat,
+                    Content = tresc
 
                 };
                 db.Notes.Add(note);

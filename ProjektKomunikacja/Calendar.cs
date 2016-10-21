@@ -161,6 +161,9 @@ namespace ProjektKomunikacja
 
                     }
 
+
+
+                    // if
                     //new Note(new DateTime(yrcounter, mthcounter, dayCounter));
 
 

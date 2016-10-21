@@ -8,6 +8,7 @@ namespace ProjektKomunikacja
 {
     class Functions
     {
+
         public static void addContactInterface()
         {
 
@@ -55,6 +56,61 @@ namespace ProjektKomunikacja
 
             if (key.Key == ConsoleKey.Escape)
                 Functions.createContactInterface();
+
+        }
+
+        public static void addAddressInterface()
+        {
+            Functions.createFrame(30, 7, 80, 22);
+
+            Console.SetCursorPosition(45, 9);
+            Console.Write("Dodaj Nowy Adres");
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write("     Podaj Nazwe:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("    Podaj Miasto:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write("     Podaj Ulice:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("   Podaj telefon:");
+
+            Console.SetCursorPosition(49, 11);
+            string compName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 13);
+            string townName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 15);
+            string stName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 17);
+            string tel = Console.ReadLine();
+            int compPhon = Int32.Parse(tel);
+
+
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Baza.AddAddress(compName, townName, stName, compPhon);
+
+                Functions.createAddressInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createAddressInterface();
+
+
+
 
         }
 
@@ -124,6 +180,43 @@ namespace ProjektKomunikacja
         }
 
 
+        public static void addNoteInterface(string notatka)
+        {
+            Functions.createFrame(46, 3, 74, 19);
+
+
+            Console.SetCursorPosition(50, 6);
+            Console.Write(" Dodaj Nową Notatke");
+
+            Console.SetCursorPosition(51, 9);
+            Console.WriteLine("  Nazwa notatki:");
+
+            Console.SetCursorPosition(53, 10);
+            string temat = Console.ReadLine();
+
+            Console.SetCursorPosition(51, 14);
+            Console.WriteLine("[Enter] - Potwierdź");
+
+            Console.SetCursorPosition(51, 16);
+            Console.WriteLine("  [Esc] - Odrzuć  ");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+
+                Baza.AddNote(temat, notatka);
+                Functions.createNoteInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createNoteInterface();
+
+
+        }
+
+
         /* 
           Funckje do wypisywania
         */
@@ -171,8 +264,6 @@ namespace ProjektKomunikacja
 
 
         }
-
-
 
 
         public static void printAlarm()
@@ -325,10 +416,6 @@ namespace ProjektKomunikacja
         /*
           Fukncja do czyszczenia
         */
-
-
-
-
         public static void cleaner()
         {
             for (int i = 2; i <= 117; i++)
@@ -343,6 +430,9 @@ namespace ProjektKomunikacja
 
             }
         }
+
+
+
 
         public static void addButton()
         {
@@ -448,6 +538,7 @@ namespace ProjektKomunikacja
             Functions.appMovement(3);
         }
 
+
         public static void createNoteInterface()
         {
             //
@@ -476,7 +567,7 @@ namespace ProjektKomunikacja
 
             Functions.printNotes();
 
-            Functions.appMovement(3);
+            Functions.appMovement(6);
         }
 
 
@@ -538,9 +629,8 @@ namespace ProjektKomunikacja
 
             Functions.printAddress();
 
-            Functions.appMovement(3);
+            Functions.appMovement(4);
         }
-
 
 
         public static void menuInterface()
@@ -635,9 +725,6 @@ namespace ProjektKomunikacja
                 {
                     Functions.createMeetInterface();
 
-                    //    DateTime data = new DateTime(2016, 10, 1);
-
-                    //   new Calendar(data);
                 }
 
                 //Adresy
@@ -669,9 +756,9 @@ namespace ProjektKomunikacja
                         new Calendar(data, 3);
 
                     }
-                    //   if (FuncNumb == 4) Functions.addAddressInterface();
+                    if (FuncNumb == 4) Functions.addAddressInterface();
                     //    if (FuncNumb == 5) Functions.addAlarmInterface();
-                    //   if (FuncNumb == 6) Functions.addNoteInterface();
+                    if (FuncNumb == 6) new Notes(DateTime.Now);
                 }
 
 
