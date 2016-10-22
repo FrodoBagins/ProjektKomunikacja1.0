@@ -114,7 +114,6 @@ namespace ProjektKomunikacja
 
         }
 
-
         public static void addMeetInterface(DateTime data)
         {
             Functions.createFrame(30, 4, 80, 22);
@@ -179,7 +178,6 @@ namespace ProjektKomunikacja
 
         }
 
-
         public static void addNoteInterface(string notatka)
         {
             Functions.createFrame(46, 3, 74, 19);
@@ -215,6 +213,9 @@ namespace ProjektKomunikacja
 
 
         }
+
+
+
 
 
         /* 
@@ -432,8 +433,6 @@ namespace ProjektKomunikacja
         }
 
 
-
-
         public static void addButton()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -535,7 +534,7 @@ namespace ProjektKomunikacja
 
             Functions.printAlarm();
 
-            Functions.appMovement(3);
+            Functions.appMovement(5);
         }
 
 
@@ -708,6 +707,24 @@ namespace ProjektKomunikacja
                 }
 
 
+
+
+
+                //Delete
+                if (keypress.Key == ConsoleKey.Enter && col == 21)
+                {
+                    int todelete;
+                    int numer = Console.CursorTop;
+
+                    todelete = (numer - 2) / 4;
+
+                    if (FuncNumb == 2) { Baza.DeleteContact(todelete); Functions.createContactInterface(); }
+                    if (FuncNumb == 3) { Baza.DeleteMeet(todelete);    Functions.createMeetInterface(); }
+                    if (FuncNumb == 4) { Baza.DeleteAddress(todelete); Functions.createAddressInterface(); }
+                    if (FuncNumb == 6) { Baza.DeleteNotes(todelete); Functions.createNoteInterface(); }
+                }
+
+
                 //Start
                 if (keypress.Key == ConsoleKey.F1)
                 {                    
@@ -744,6 +761,9 @@ namespace ProjektKomunikacja
                 {
                     Functions.createNoteInterface();
                 }
+
+
+
 
 
                 if (keypress.Key == ConsoleKey.F7)

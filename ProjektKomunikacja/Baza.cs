@@ -59,7 +59,6 @@ namespace ProjektKomunikacja
             }
         }
 
-
         public static void AddAddress(string compName,string townName,string stName,int compPhon)
         {
             using (var db = new AddressDbContext())
@@ -75,7 +74,6 @@ namespace ProjektKomunikacja
                 db.SaveChanges();
             }
         }
-
 
         public static void AddNote(string temat,string tresc)
         {
@@ -93,6 +91,83 @@ namespace ProjektKomunikacja
             }
         }
 
+
+
+        public static void DeleteContact(int id)
+        {
+            using (var db = new ContactDbContext())
+            {             
+                int counter = 1;
+
+                foreach (var contact in db.Contacts)
+                {                    
+                    if(counter == id)
+                    {                        
+                        db.Contacts.Remove(contact);
+                        break;
+                    }                   
+                    ++counter;                  
+                }
+               db.SaveChanges();
+            }
+        }
+
+        public static void DeleteMeet(int id)
+        {
+            using (var db = new MeetDbContext())
+            {
+                int counter = 1;
+
+                foreach (var meet in db.Meetings)
+                {
+                    if (counter == id)
+                    {
+                        db.Meetings.Remove(meet);
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteAddress(int id)
+        {
+            using (var db = new AddressDbContext())
+            {
+                int counter = 1;
+
+                foreach (var address in db.Addresses)
+                {
+                    if (counter == id)
+                    {
+                        db.Addresses.Remove(address);
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteNotes(int id)
+        {
+            using (var db = new NoteDbContext())
+            {
+                int counter = 1;
+
+                foreach (var note in db.Notes)
+                {
+                    if (counter == id)
+                    {
+                        db.Notes.Remove(note);
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
 
 
         public static List<String> MeetList()
@@ -115,9 +190,6 @@ namespace ProjektKomunikacja
             }        
         }
 
-
-
-
         public static List<String> ContactList()
         {
             using (var db = new ContactDbContext())
@@ -137,8 +209,6 @@ namespace ProjektKomunikacja
             }
         }
 
-
-
         public static List<String> AlarmList()
         {
             using (var db = new AlarmDbContext())
@@ -157,7 +227,6 @@ namespace ProjektKomunikacja
                 return Alarms;
             }
         }
-
 
         public static List<String> AddressList()
         {
