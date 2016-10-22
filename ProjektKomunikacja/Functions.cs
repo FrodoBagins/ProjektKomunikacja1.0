@@ -11,6 +11,7 @@ namespace ProjektKomunikacja
 
         public static int editNumber;
 
+
         public static void addContactInterface()
         {
 
@@ -176,7 +177,6 @@ namespace ProjektKomunikacja
                 Functions.createMeetInterface();
 
         }
-
         
         public static void addNoteInterface(string notatka)
         {
@@ -214,7 +214,9 @@ namespace ProjektKomunikacja
 
         }
 
-        internal static void editNoteInterface(string tempstring)
+
+
+        public static void editNoteInterface(string tempstring)
         {
             Functions.createFrame(46, 3, 74, 19);
 
@@ -249,6 +251,7 @@ namespace ProjektKomunikacja
 
 
         }
+
         public static void editContactInterface(int id)
         {
             Functions.createFrame(30, 7, 80, 22);
@@ -299,13 +302,7 @@ namespace ProjektKomunikacja
 
         }
 
-
-
-
-
-
-
-        internal static void editMeetInterface(DateTime data)
+        public static void editMeetInterface(DateTime data)
         {
 
             Functions.createFrame(30, 4, 80, 22);
@@ -367,18 +364,7 @@ namespace ProjektKomunikacja
             if (key.Key == ConsoleKey.Escape)
                 Functions.createMeetInterface();
 
-
-
-
-
-
-
-            throw new NotImplementedException();
-
-
-
-
-        }
+       }
 
         public static void editAddressInterface(int id)
         {
@@ -411,8 +397,6 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(49, 17);
             string tel = Console.ReadLine();
             int compPhon = Int32.Parse(tel);
-
-
 
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
@@ -842,6 +826,8 @@ namespace ProjektKomunikacja
         }
 
 
+
+
         public static void menuInterface()
         {
 
@@ -909,18 +895,13 @@ namespace ProjektKomunikacja
                 }
 
 
-
                 if (keypress.Key == ConsoleKey.DownArrow)
                 {
                     Console.SetCursorPosition(col, row+=4);
-
                 }
 
 
-
-
-
-                //Delete
+               //Delete
                 if (keypress.Key == ConsoleKey.Enter && col == 21)
                 {
                     int todelete;
@@ -933,7 +914,6 @@ namespace ProjektKomunikacja
                     if (FuncNumb == 4) { Baza.DeleteAddress(todelete); Functions.createAddressInterface(); }
                     if (FuncNumb == 6) { Baza.DeleteNotes(todelete); Functions.createNoteInterface(); }
                 }
-
 
 
                 //Edit
@@ -952,14 +932,7 @@ namespace ProjektKomunikacja
                         new Calendar(data, 4);
                     }
                     if (FuncNumb == 4) { Functions.editAddressInterface(toedit); }
-
-                    if (FuncNumb == 6)
-                    {
-
-                        editNumber = toedit;
-                        new Notes(DateTime.Now, 2);
-
-                    }
+                    if (FuncNumb == 6) { editNumber = toedit; new Notes(DateTime.Now, 2); }
 
                 }
 
