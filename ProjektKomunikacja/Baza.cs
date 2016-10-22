@@ -44,14 +44,14 @@ namespace ProjektKomunikacja
             }
         }
 
-        public static void AddAlarm()
+        public static void AddAlarm(DateTime czas,string nazwa)
         {
             using (var db = new AlarmDbContext())
             {
                 var alarm = new Alarm
                 {
-                    Name = "Pobudka",
-                    AlarmTime = DateTime.Now
+                    Name = nazwa,
+                    AlarmTime = czas
 
                 };
                 db.Alarms.Add(alarm);
@@ -91,12 +91,6 @@ namespace ProjektKomunikacja
             }
         }
 
-        /// <summary>
-        /// Edycja
-        /// </summary>
-        /// 
-
-
 
         public static void EditAddress(int id,string compName, string townName, string stName, int compPhon)
         {           
@@ -119,7 +113,6 @@ namespace ProjektKomunikacja
                     db.SaveChanges();
                 }         
         }
-
 
         public static void EditContact(int id,string fName,string lName,int phon,string mail)
         {
@@ -145,7 +138,6 @@ namespace ProjektKomunikacja
             }
         }
 
-
         public static void EditMeet(int id,DateTime czas, string osoba, string miejsce)
         {
             using (var db = new MeetDbContext())
@@ -168,8 +160,6 @@ namespace ProjektKomunikacja
             }
         }
 
-
-
         public static void EditNote(int id,string temat, string tresc)
         {
        
@@ -181,12 +171,9 @@ namespace ProjektKomunikacja
                 {
                     if (counter == id)
                     {
-
-                        Console.WriteLine("Kurwaaaaaaaaaaaaaaaaaaaaaaa");
                         note.NoteTime = DateTime.Now;
                         note.Subject = temat;
                         note.Content = tresc;
-
                         break;
                     }
                     ++counter;
@@ -196,6 +183,39 @@ namespace ProjektKomunikacja
 
         }
 
+        public static void SetAlarm(int id)
+        {
+            using (var db = new AlarmDbContext())
+            {
+                int counter = 1;
+
+                foreach (var alarm in db.Alarms)
+                {
+                    if (counter == id)
+                    {
+                        int hour,minutes;
+
+                        hour = alarm.AlarmTime.Hour;
+
+                        minutes = alarm.AlarmTime.Minute;
+
+                        string godz, min;
+
+                        godz = hour.ToString();
+
+                        min = minutes.ToString();
+
+                        new Alarms(godz, min, "00");
+
+                        break;
+                    }
+                    ++counter;
+                }
+               
+            }
+
+
+        }
 
 
 
@@ -274,6 +294,27 @@ namespace ProjektKomunikacja
                 db.SaveChanges();
             }
         }
+
+        public static void DeleteAlarms(int id)
+        {
+            using (var db = new AlarmDbContext())
+            {
+                int counter = 1;
+
+                foreach (var alarm in db.Alarms)
+                {
+                    if (counter == id)
+                    {
+                        db.Alarms.Remove(alarm);
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
+
+
 
 
         public static List<String> MeetList()

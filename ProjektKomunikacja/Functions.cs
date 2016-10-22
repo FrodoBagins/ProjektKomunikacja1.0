@@ -11,6 +11,17 @@ namespace ProjektKomunikacja
 
         public static int editNumber;
 
+        public static void startConsoleInterface()
+        {
+            Functions.createInterface();
+
+            Functions.createStartInterface();
+
+
+
+
+
+        }
 
         public static void addContactInterface()
         {
@@ -214,6 +225,66 @@ namespace ProjektKomunikacja
 
         }
 
+        public static void addAlarmInterface()
+        {
+            Functions.createFrame(46, 3, 74, 19);
+
+            Console.SetCursorPosition(50, 6);
+            Console.Write(" Dodaj Nowy Alarm");
+
+            Console.SetCursorPosition(51, 8);
+            Console.WriteLine("  Godzina:");
+
+            Console.SetCursorPosition(51, 10);
+            Console.WriteLine("    Minut:");
+
+            Console.SetCursorPosition(51, 12);
+            Console.WriteLine("    Nazwa:");
+
+            Console.SetCursorPosition(61, 8);
+            string godz = Console.ReadLine();
+            int hour = Int32.Parse(godz);
+
+            Console.SetCursorPosition(61, 10);
+            string min = Console.ReadLine();
+            int minutes = Int32.Parse(min);
+
+            Console.SetCursorPosition(61, 12);
+            string temat = Console.ReadLine();
+
+            Console.SetCursorPosition(51, 14);
+            Console.WriteLine("[Enter] - Potwierdź");
+
+            Console.SetCursorPosition(51, 16);
+            Console.WriteLine("  [Esc] - Odrzuć  ");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+
+                DateTime data = new DateTime();
+                data = DateTime.Today;
+
+                data = data.AddHours(hour);
+                data = data.AddMinutes(minutes);
+
+                Baza.AddAlarm(data, temat);
+
+                new Alarms(godz, min, "00");
+
+                Functions.createAlarmInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createAlarmInterface();
+
+
+
+
+
+        }
 
 
         public static void editNoteInterface(string tempstring)
@@ -415,6 +486,13 @@ namespace ProjektKomunikacja
 
         }
 
+        public static void setUpAlarm(int id)
+        {
+            Baza.SetAlarm(id);
+
+
+        }
+
         /* 
           Funckje do wypisywania
         */
@@ -481,7 +559,7 @@ namespace ProjektKomunikacja
                 Console.SetCursorPosition(i, j);
                 Console.WriteLine(baza);
                 Console.SetCursorPosition(i, j + 1);
-                Console.Write("[ ]-Edytuj     [ ]-Usuń");
+                Console.Write("[ ]-Ustaw      [ ]-Usuń");
                 for (int k = i; k < 40; k++)
                 {
                     Console.SetCursorPosition(k, j + 2);
@@ -654,9 +732,10 @@ namespace ProjektKomunikacja
 
             Functions.cleaner();
 
+            Console.SetCursorPosition(13, 13);
+            Console.Write("Witam Studenta!");
 
-
-
+            Functions.appMovement(1);
         }
 
 
@@ -826,8 +905,6 @@ namespace ProjektKomunikacja
         }
 
 
-
-
         public static void menuInterface()
         {
 
@@ -912,6 +989,7 @@ namespace ProjektKomunikacja
                     if (FuncNumb == 2) { Baza.DeleteContact(todelete); Functions.createContactInterface(); }
                     if (FuncNumb == 3) { Baza.DeleteMeet(todelete);    Functions.createMeetInterface(); }
                     if (FuncNumb == 4) { Baza.DeleteAddress(todelete); Functions.createAddressInterface(); }
+                    if (FuncNumb == 5) { Baza.DeleteAlarms(todelete); Functions.createAlarmInterface(); }
                     if (FuncNumb == 6) { Baza.DeleteNotes(todelete); Functions.createNoteInterface(); }
                 }
 
@@ -932,6 +1010,7 @@ namespace ProjektKomunikacja
                         new Calendar(data, 4);
                     }
                     if (FuncNumb == 4) { Functions.editAddressInterface(toedit); }
+                    if (FuncNumb == 5) { Functions.setUpAlarm(toedit); }
                     if (FuncNumb == 6) { editNumber = toedit; new Notes(DateTime.Now, 2); }
 
                 }
@@ -989,7 +1068,7 @@ namespace ProjektKomunikacja
 
                     }
                     if (FuncNumb == 4) Functions.addAddressInterface();
-                    //    if (FuncNumb == 5) Functions.addAlarmInterface();
+                    if (FuncNumb == 5) Functions.addAlarmInterface();
                     if (FuncNumb == 6) new Notes(DateTime.Now,1);
                 }
 
