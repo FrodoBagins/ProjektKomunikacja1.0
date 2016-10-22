@@ -9,6 +9,8 @@ namespace ProjektKomunikacja
     class Functions
     {
 
+        public static int editNumber;
+
         public static void addContactInterface()
         {
 
@@ -175,6 +177,7 @@ namespace ProjektKomunikacja
 
         }
 
+        
         public static void addNoteInterface(string notatka)
         {
             Functions.createFrame(46, 3, 74, 19);
@@ -211,8 +214,41 @@ namespace ProjektKomunikacja
 
         }
 
+        internal static void editNoteInterface(string tempstring)
+        {
+            Functions.createFrame(46, 3, 74, 19);
 
 
+            Console.SetCursorPosition(50, 6);
+            Console.Write(" Edytuj Notatke");
+
+            Console.SetCursorPosition(51, 9);
+            Console.WriteLine("  Nazwa notatki:");
+
+            Console.SetCursorPosition(53, 10);
+            string temat = Console.ReadLine();
+
+            Console.SetCursorPosition(51, 14);
+            Console.WriteLine("[Enter] - Potwierdź");
+
+            Console.SetCursorPosition(51, 16);
+            Console.WriteLine("  [Esc] - Odrzuć  ");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+
+                Baza.EditNote(editNumber, temat, tempstring);
+                Functions.createNoteInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createNoteInterface();
+
+
+        }
         public static void editContactInterface(int id)
         {
             Functions.createFrame(30, 7, 80, 22);
@@ -259,6 +295,87 @@ namespace ProjektKomunikacja
 
             if (key.Key == ConsoleKey.Escape)
                 Functions.createContactInterface();
+
+
+        }
+
+
+
+
+
+
+
+        internal static void editMeetInterface(DateTime data)
+        {
+
+            Functions.createFrame(30, 4, 80, 22);
+
+            Console.SetCursorPosition(45, 6);
+            Console.Write("Edytuj Spotkanie");
+
+            string datash = data.ToShortDateString();
+
+
+            Console.SetCursorPosition(32, 9);
+            Console.Write("         Data:" + datash);
+
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write("      Godzina:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("        Minut:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write("      Miejsce:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("        Z kim:");
+
+
+            Console.SetCursorPosition(46, 11);
+            string godzinas = Console.ReadLine();
+            int godzina = Int32.Parse(godzinas);
+
+            data = data.AddHours(godzina);
+
+            Console.SetCursorPosition(46, 13);
+            string minutas = Console.ReadLine();
+            int minuta = Int32.Parse(minutas);
+
+            data = data.AddMinutes(minuta);
+
+            Console.SetCursorPosition(46, 15);
+            string miejsce = Console.ReadLine();
+
+            Console.SetCursorPosition(46, 17);
+            string osoba = Console.ReadLine();
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+
+                Baza.EditMeet(editNumber, data, osoba, miejsce);
+                Functions.createMeetInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createMeetInterface();
+
+
+
+
+
+
+
+            throw new NotImplementedException();
+
+
 
 
         }
@@ -828,9 +945,21 @@ namespace ProjektKomunikacja
                     toedit = (numer - 2) / 4;
 
                     if (FuncNumb == 2) { Functions.editContactInterface(toedit); }
+                    if (FuncNumb == 3)
+                    {
+                        editNumber = toedit;
+                        DateTime data = DateTime.Now;
+                        new Calendar(data, 4);
+                    }
                     if (FuncNumb == 4) { Functions.editAddressInterface(toedit); }
 
+                    if (FuncNumb == 6)
+                    {
 
+                        editNumber = toedit;
+                        new Notes(DateTime.Now, 2);
+
+                    }
 
                 }
 
@@ -888,7 +1017,7 @@ namespace ProjektKomunikacja
                     }
                     if (FuncNumb == 4) Functions.addAddressInterface();
                     //    if (FuncNumb == 5) Functions.addAlarmInterface();
-                    if (FuncNumb == 6) new Notes(DateTime.Now);
+                    if (FuncNumb == 6) new Notes(DateTime.Now,1);
                 }
 
 

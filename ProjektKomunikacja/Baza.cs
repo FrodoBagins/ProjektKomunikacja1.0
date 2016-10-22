@@ -146,8 +146,55 @@ namespace ProjektKomunikacja
         }
 
 
+        public static void EditMeet(int id,DateTime czas, string osoba, string miejsce)
+        {
+            using (var db = new MeetDbContext())
+            {
+                 
+                int counter = 1;
+
+                foreach (var meet in db.Meetings)
+                {
+                    if (counter == id)
+                    {
+                        meet.MeetTime = czas;
+                        meet.Person = osoba;
+                        meet.Place = miejsce;
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
 
 
+
+        public static void EditNote(int id,string temat, string tresc)
+        {
+       
+            using (var db = new NoteDbContext())
+            {
+                int counter = 1;
+
+                foreach (var note in db.Notes)
+                {
+                    if (counter == id)
+                    {
+
+                        Console.WriteLine("Kurwaaaaaaaaaaaaaaaaaaaaaaa");
+                        note.NoteTime = DateTime.Now;
+                        note.Subject = temat;
+                        note.Content = tresc;
+
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+
+        }
 
 
 

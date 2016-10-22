@@ -11,7 +11,7 @@ namespace ProjektKomunikacja
     {
         public Notes() { }
 
-        public Notes(DateTime date)
+        public Notes(DateTime date,int type)
         {
             int leftRange = (Console.WindowWidth) / 2 - 14;
             int rightRange = (Console.WindowWidth) / 2 + 15;
@@ -102,7 +102,12 @@ namespace ProjektKomunikacja
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Cyan;
 
-            Functions.addNoteInterface(tempstring);
+
+            if(type == 1)
+             Functions.addNoteInterface(tempstring);
+
+            if (type == 2)
+                Functions.editNoteInterface(tempstring);
 
 
 

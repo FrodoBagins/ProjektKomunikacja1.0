@@ -144,6 +144,11 @@ namespace ProjektKomunikacja
                 {
                     break;
                 }
+
+
+
+
+
                 else if (keyInfo.Key == ConsoleKey.Enter)
                 {
                     Console.CursorVisible = true;
@@ -155,11 +160,16 @@ namespace ProjektKomunikacja
 
                     if (whichTab == 3)
                     {
-
-
                         Functions.addMeetInterface(czas);
-
                     }
+
+
+                    if (whichTab == 4)
+                    {
+                        Functions.editMeetInterface(czas);
+                    }
+
+
 
 
 
