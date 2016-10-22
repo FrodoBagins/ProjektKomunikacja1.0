@@ -15,27 +15,17 @@ namespace ProjektKomunikacja
         {
 
             Functions.createInterface();
-
-
-          //  new Notes(DateTime.Now);
-
-
-
+        
             Console.SetCursorPosition(13, 13);
             Console.Write("Witam Studenta!");
 
-
-
-
             ConsoleKeyInfo keypress;
-
            
             int col = Console.CursorLeft;
             int row = Console.CursorTop;
 
             int  tempCol,tempRow;
-
-          
+         
             keypress = Console.ReadKey();
 
             while (keypress.Key!= ConsoleKey.F9)
@@ -43,28 +33,24 @@ namespace ProjektKomunikacja
 
                 if(keypress.Key == ConsoleKey.RightArrow )
                 {
-                    Console.SetCursorPosition(++col, row);
-                   
+                    Console.SetCursorPosition(++col, row);                   
                 }
 
                 if (keypress.Key == ConsoleKey.LeftArrow)
                 {
-                    Console.SetCursorPosition(--col,row);
-                    
+                    Console.SetCursorPosition(--col,row);                    
                 }
 
 
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
-                    Console.SetCursorPosition(col, --row);
-                  
+                    Console.SetCursorPosition(col, --row);                  
                 }
 
 
                 if (keypress.Key == ConsoleKey.DownArrow)
                 {
-                    Console.SetCursorPosition(col, ++row);
-                   
+                    Console.SetCursorPosition(col, ++row);               
                 }
 
 
@@ -90,10 +76,6 @@ namespace ProjektKomunikacja
                 if (keypress.Key == ConsoleKey.F3)
                 {
                     Functions.createMeetInterface();
-
-                    //    DateTime data = new DateTime(2016, 10, 1);
-
-                    //   new Calendar(data);
                 }
        
                 //Adresy
@@ -113,7 +95,6 @@ namespace ProjektKomunikacja
                 {                   
                     Functions.createNoteInterface();
                 }
-
 
                 tempRow = Console.CursorTop;
                 tempCol = Console.CursorLeft;

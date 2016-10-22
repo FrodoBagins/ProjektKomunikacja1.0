@@ -109,9 +109,6 @@ namespace ProjektKomunikacja
             if (key.Key == ConsoleKey.Escape)
                 Functions.createAddressInterface();
 
-
-
-
         }
 
         public static void addMeetInterface(DateTime data)
@@ -216,7 +213,106 @@ namespace ProjektKomunikacja
 
 
 
+        public static void editContactInterface(int id)
+        {
+            Functions.createFrame(30, 7, 80, 22);
 
+            Console.SetCursorPosition(45, 9);
+            Console.Write("Dodaj Nowy Kontakt");
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write(" Nazwisko:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("     Imie:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write("  Nr Tel.:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("     Mail:");
+
+            Console.SetCursorPosition(47, 11);
+            string nazwisko = Console.ReadLine();
+
+            Console.SetCursorPosition(47, 13);
+            string imie = Console.ReadLine();
+
+            Console.SetCursorPosition(47, 15);
+            string tel = Console.ReadLine();
+            int telefon = Int32.Parse(tel);
+
+            Console.SetCursorPosition(47, 17);
+            string mail = Console.ReadLine();
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Baza.EditContact(id, imie, nazwisko, telefon, mail);
+                Functions.createContactInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createContactInterface();
+
+
+        }
+
+        public static void editAddressInterface(int id)
+        {
+            Functions.createFrame(30, 7, 80, 22);
+
+            Console.SetCursorPosition(45, 9);
+            Console.Write("Dodaj Nowy Adres");
+
+            Console.SetCursorPosition(32, 11);
+            Console.Write("     Podaj Nazwe:");
+
+            Console.SetCursorPosition(32, 13);
+            Console.Write("    Podaj Miasto:");
+
+            Console.SetCursorPosition(32, 15);
+            Console.Write("     Podaj Ulice:");
+
+            Console.SetCursorPosition(32, 17);
+            Console.Write("   Podaj telefon:");
+
+            Console.SetCursorPosition(49, 11);
+            string compName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 13);
+            string townName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 15);
+            string stName = Console.ReadLine();
+
+            Console.SetCursorPosition(49, 17);
+            string tel = Console.ReadLine();
+            int compPhon = Int32.Parse(tel);
+
+
+
+            Console.SetCursorPosition(35, 20);
+            Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
+            if (key.Key == ConsoleKey.Enter)
+            {          
+                Baza.EditAddress(id, compName, townName, stName, compPhon);
+                Functions.createAddressInterface();
+            }
+
+            if (key.Key == ConsoleKey.Escape)
+                Functions.createAddressInterface();
+
+        }
 
         /* 
           Funckje do wypisywania
@@ -410,9 +506,6 @@ namespace ProjektKomunikacja
 
             
         }
-
-
-
 
         /*
           Fukncja do czyszczenia
@@ -725,6 +818,25 @@ namespace ProjektKomunikacja
                 }
 
 
+
+                //Edit
+                if (keypress.Key == ConsoleKey.Enter && col == 6)
+                {
+                    int toedit;
+                    int numer = Console.CursorTop;
+
+                    toedit = (numer - 2) / 4;
+
+                    if (FuncNumb == 2) { Functions.editContactInterface(toedit); }
+                    if (FuncNumb == 4) { Functions.editAddressInterface(toedit); }
+
+
+
+                }
+
+
+
+
                 //Start
                 if (keypress.Key == ConsoleKey.F1)
                 {                    
@@ -763,9 +875,7 @@ namespace ProjektKomunikacja
                 }
 
 
-
-
-
+                //Add
                 if (keypress.Key == ConsoleKey.F7)
                 {
                     if (FuncNumb == 2) Functions.addContactInterface();
@@ -780,11 +890,6 @@ namespace ProjektKomunikacja
                     //    if (FuncNumb == 5) Functions.addAlarmInterface();
                     if (FuncNumb == 6) new Notes(DateTime.Now);
                 }
-
-
-
-
-
 
 
 

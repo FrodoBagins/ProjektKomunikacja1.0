@@ -91,6 +91,65 @@ namespace ProjektKomunikacja
             }
         }
 
+        /// <summary>
+        /// Edycja
+        /// </summary>
+        /// 
+
+
+
+        public static void EditAddress(int id,string compName, string townName, string stName, int compPhon)
+        {           
+                using (var db = new AddressDbContext())
+                {
+                    int counter = 1;
+
+                    foreach (var address in db.Addresses)
+                    {
+                        if (counter == id)
+                        {
+                         address.Company = compName;
+                         address.Town = townName;
+                         address.Street = stName;
+                         address.CompPhone = compPhon;
+                         break;
+                        }
+                        ++counter;
+                    }
+                    db.SaveChanges();
+                }         
+        }
+
+
+        public static void EditContact(int id,string fName,string lName,int phon,string mail)
+        {
+            using (var db = new ContactDbContext())
+            {
+                int counter = 1;
+
+                foreach (var contact in db.Contacts)
+                {
+                    if (counter == id)
+                    {
+                       
+                        contact.FirstName = fName;
+                        contact.LastName = lName;
+                        contact.Phone = phon;
+                        contact.Mail = mail;
+
+                        break;
+                    }
+                    ++counter;
+                }
+                db.SaveChanges();
+            }
+        }
+
+
+
+
+
+
 
 
         public static void DeleteContact(int id)
