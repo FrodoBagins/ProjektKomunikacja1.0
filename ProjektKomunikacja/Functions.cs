@@ -1009,7 +1009,7 @@ namespace ProjektKomunikacja
         {
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.SetWindowSize(120, 30);
+            Console.SetWindowSize(113, 30);
             Console.SetBufferSize(120, 30);
 
             Console.SetCursorPosition(1, 0);
