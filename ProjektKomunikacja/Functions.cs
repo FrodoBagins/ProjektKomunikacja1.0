@@ -23,9 +23,10 @@ namespace ProjektKomunikacja
 
         }
 
+
         public static void addContactInterface()
         {
-
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(45, 9);
@@ -59,6 +60,8 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
 
+            Console.ResetColor();
+
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -75,6 +78,7 @@ namespace ProjektKomunikacja
 
         public static void addAddressInterface()
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(45, 9);
@@ -109,6 +113,7 @@ namespace ProjektKomunikacja
 
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
+            Console.ResetColor();
 
             ConsoleKeyInfo key;
             key = Console.ReadKey();
@@ -127,6 +132,7 @@ namespace ProjektKomunikacja
 
         public static void addMeetInterface(DateTime data)
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Functions.createFrame(30, 4, 80, 22);
 
 
@@ -175,6 +181,8 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
 
+            Console.ResetColor();
+
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -191,23 +199,28 @@ namespace ProjektKomunikacja
         
         public static void addNoteInterface(string notatka)
         {
-            Functions.createFrame(46, 3, 74, 19);
 
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Functions.createFrame(42, 3, 74, 19);
 
-            Console.SetCursorPosition(50, 6);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+
+            Console.SetCursorPosition(48, 6);
             Console.Write(" Dodaj Nową Notatke");
 
-            Console.SetCursorPosition(51, 9);
+            Console.SetCursorPosition(49, 9);
             Console.WriteLine("  Nazwa notatki:");
 
-            Console.SetCursorPosition(53, 10);
+            Console.SetCursorPosition(51, 10);
             string temat = Console.ReadLine();
 
-            Console.SetCursorPosition(51, 14);
+            Console.SetCursorPosition(49, 14);
             Console.WriteLine("[Enter] - Potwierdź");
 
-            Console.SetCursorPosition(51, 16);
+            Console.SetCursorPosition(49, 16);
             Console.WriteLine("  [Esc] - Odrzuć  ");
+
+            Console.ResetColor();
 
             ConsoleKeyInfo key;
             key = Console.ReadKey();
@@ -221,12 +234,11 @@ namespace ProjektKomunikacja
 
             if (key.Key == ConsoleKey.Escape)
                 Functions.createNoteInterface();
-
-
         }
 
         public static void addAlarmInterface()
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Functions.createFrame(46, 3, 74, 19);
 
             Console.SetCursorPosition(50, 6);
@@ -258,6 +270,9 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(51, 16);
             Console.WriteLine("  [Esc] - Odrzuć  ");
 
+
+            Console.ResetColor();
+
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -287,25 +302,30 @@ namespace ProjektKomunikacja
         }
 
 
+
         public static void editNoteInterface(string tempstring)
         {
-            Functions.createFrame(46, 3, 74, 19);
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Functions.createFrame(42, 3, 74, 19);
 
 
-            Console.SetCursorPosition(50, 6);
+            Console.SetCursorPosition(48, 6);
             Console.Write(" Edytuj Notatke");
 
-            Console.SetCursorPosition(51, 9);
+            Console.SetCursorPosition(49, 9);
             Console.WriteLine("  Nazwa notatki:");
 
-            Console.SetCursorPosition(53, 10);
+            Console.SetCursorPosition(51, 10);
             string temat = Console.ReadLine();
 
-            Console.SetCursorPosition(51, 14);
+            Console.SetCursorPosition(49, 14);
             Console.WriteLine("[Enter] - Potwierdź");
 
-            Console.SetCursorPosition(51, 16);
+            Console.SetCursorPosition(49, 16);
             Console.WriteLine("  [Esc] - Odrzuć  ");
+
+            Console.ResetColor();
 
             ConsoleKeyInfo key;
             key = Console.ReadKey();
@@ -325,6 +345,7 @@ namespace ProjektKomunikacja
 
         public static void editContactInterface(int id)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(45, 9);
@@ -358,6 +379,8 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
 
+            Console.ResetColor();
+
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -375,6 +398,7 @@ namespace ProjektKomunikacja
 
         public static void editMeetInterface(DateTime data)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Functions.createFrame(30, 4, 80, 22);
 
@@ -422,6 +446,9 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
 
+
+            Console.ResetColor();
+
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -439,6 +466,8 @@ namespace ProjektKomunikacja
 
         public static void editAddressInterface(int id)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Functions.createFrame(30, 7, 80, 22);
 
             Console.SetCursorPosition(45, 9);
@@ -471,7 +500,7 @@ namespace ProjektKomunikacja
 
             Console.SetCursorPosition(35, 20);
             Console.WriteLine("[Enter] - Potwierdź    [Esc] - Odrzuć");
-
+            Console.ResetColor();
             ConsoleKeyInfo key;
             key = Console.ReadKey();
 
@@ -572,7 +601,6 @@ namespace ProjektKomunikacja
             
         }
 
-
         public static void printContact()
         {
             List<String> Contacts = new List<String>();
@@ -601,7 +629,6 @@ namespace ProjektKomunikacja
             
         }
 
-
         public static void printMeet()
         {
             List<String> Meetings = new List<String>();
@@ -627,7 +654,6 @@ namespace ProjektKomunikacja
                 j += 4;
             }           
         }
-
 
         public static void printAddress()
         {
@@ -655,7 +681,6 @@ namespace ProjektKomunikacja
             }
             
         }
-
 
         public static void printNotes()
         {
@@ -691,7 +716,7 @@ namespace ProjektKomunikacja
         */
         public static void cleaner()
         {
-            for (int i = 2; i <= 117; i++)
+            for (int i = 2; i <= 110; i++)
             {
 
 
@@ -704,13 +729,13 @@ namespace ProjektKomunikacja
             }
         }
 
-
         public static void addButton()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.SetCursorPosition(99, 4);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.SetCursorPosition(93, 5);
             Console.Write("[F7]-Dodaj");
-    
+            Console.SetCursorPosition(93, 6);
+            Console.Write("nowy wpis");
         }
 
 
@@ -721,10 +746,10 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(3, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(19, 2);
+            Console.SetCursorPosition(17, 2);
             Console.Write("╚");
 
-            for (int i = 4; i < 19; i++)
+            for (int i = 4; i < 17; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
@@ -738,91 +763,80 @@ namespace ProjektKomunikacja
             Functions.appMovement(1);
         }
 
-
         public static void createMeetInterface()
         {
-            //
             Functions.menuInterface();
 
-
-
-            Console.SetCursorPosition(41, 2);
+            Console.SetCursorPosition(35, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(57, 2);
+            Console.SetCursorPosition(49, 2);
             Console.Write("╚");
 
-            for (int i = 42; i < 57; i++)
+            for (int i = 36; i < 49; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
             }
 
             Functions.cleaner();
-            //
-
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
-
+            Console.ForegroundColor = ConsoleColor.White;
             Functions.printMeet();
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Functions.appMovement(3);
 
-            
-
-          //  DateTime data = new DateTime(2016, 10, 1);
-
-          //  new Calendar(data);
-
-
-            
-
         }
-
 
         public static void createAlarmInterface()
         {
-            //
+            
             Functions.menuInterface();
 
-            Console.SetCursorPosition(79, 2);
+            Console.SetCursorPosition(67, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(95, 2);
+            Console.SetCursorPosition(81, 2);
             Console.Write("╚");
 
-            for (int i = 80; i < 95; i++)
+            for (int i = 68; i < 81; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
             }
 
             Functions.cleaner();
-            //
+            
 
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
+           
+
+            Console.ForegroundColor = ConsoleColor.White;
+
             Functions.printAlarm();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Functions.appMovement(5);
         }
-
 
         public static void createNoteInterface()
         {
             //
             Functions.menuInterface();
 
-            Console.SetCursorPosition(98, 2);
+            Console.SetCursorPosition(83, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(114, 2);
+            Console.SetCursorPosition(97, 2);
             Console.Write("╚");
 
-            for (int i = 99; i < 114; i++)
+            for (int i = 84; i < 97; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
@@ -837,11 +851,16 @@ namespace ProjektKomunikacja
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
+            
+
+            Console.ForegroundColor = ConsoleColor.White;
+
             Functions.printNotes();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Functions.appMovement(6);
         }
-
 
         public static void createContactInterface()
         {
@@ -849,13 +868,13 @@ namespace ProjektKomunikacja
             Functions.menuInterface();
 
 
-            Console.SetCursorPosition(22, 2);
+            Console.SetCursorPosition(19, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(38, 2);
+            Console.SetCursorPosition(33, 2);
             Console.Write("╚");
 
-            for (int i = 23; i < 38; i++)
+            for (int i = 20; i < 33; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
@@ -868,38 +887,44 @@ namespace ProjektKomunikacja
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
+
+            Console.ForegroundColor = ConsoleColor.White;
+
             Functions.printContact();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Functions.appMovement(2);
         }
 
-
         public static void createAddressInterface()
         {
-            //
+            
             Functions.menuInterface();
 
-            Console.SetCursorPosition(60, 2);
+            Console.SetCursorPosition(51, 2);
             Console.Write("╝");
 
-            Console.SetCursorPosition(76, 2);
+            Console.SetCursorPosition(65, 2);
             Console.Write("╚");
 
-            for (int i = 61; i < 76; i++)
+            for (int i = 52; i < 65; i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write(" ");
             }
 
-
             Functions.cleaner();
-            //
-
+            
             Functions.addButton();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
+            Console.ForegroundColor = ConsoleColor.White;
+
             Functions.printAddress();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Functions.appMovement(4);
         }
@@ -908,7 +933,7 @@ namespace ProjektKomunikacja
         public static void menuInterface()
         {
 
-            for(int i = 2; i<118;i++)
+            for(int i = 2; i<111;i++)
             {
                 Console.SetCursorPosition(i, 2);
                 Console.Write("═");
@@ -917,7 +942,6 @@ namespace ProjektKomunikacja
 
 
         }
-
 
         public static void appMovement(int FuncNumb)
         {
@@ -1083,13 +1107,12 @@ namespace ProjektKomunikacja
 
         }
 
-
         public static void createInterface()
         {
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetWindowSize(113, 30);
-            Console.SetBufferSize(120, 30);
+            Console.SetBufferSize(113, 30);
 
             Console.SetCursorPosition(1, 0);
             Console.Write("╔");
@@ -1098,21 +1121,21 @@ namespace ProjektKomunikacja
             Console.SetCursorPosition(1, 29);
             Console.Write("╚");
 
-            Console.SetCursorPosition(118, 0);
+            Console.SetCursorPosition(111, 0);
             Console.Write("╗");
 
-            Console.SetCursorPosition(118, 29);
+            Console.SetCursorPosition(111, 29);
             Console.Write("╝");
 
             for (int i = 1; i < 29; ++i)
             {
                 Console.SetCursorPosition(1, i);
                 Console.Write("║");
-                Console.SetCursorPosition(118, i);
+                Console.SetCursorPosition(111, i);
                 Console.Write("║");
 
             }
-            for (int i = 2; i < 118; ++i)
+            for (int i = 2; i < 111; ++i)
             {
                 Console.SetCursorPosition(i, 29);
                 Console.Write("═");
@@ -1123,52 +1146,56 @@ namespace ProjektKomunikacja
             }
 
 
-            for (int i = 3; i < 100; i += 19)
+            for (int i = 3; i < 93; i += 16)
             {
 
 
                 Console.SetCursorPosition(i, 0);
                 Console.Write("╔");
 
-                Console.SetCursorPosition(i + 16, 0);
+                Console.SetCursorPosition(i + 14, 0);
                 Console.Write("╗");
 
                 Console.SetCursorPosition(i, 1);
                 Console.Write("║");
 
-                Console.SetCursorPosition(i + 16, 1);
+                Console.SetCursorPosition(i + 14, 1);
                 Console.Write("║");
 
                 Console.SetCursorPosition(i, 2);
                 Console.Write("╩");
 
-                Console.SetCursorPosition(i + 16, 2);
+                Console.SetCursorPosition(i + 14, 2);
                 Console.Write("╩");
+
+
             }
 
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-
             Console.SetCursorPosition(4, 1);
-            Console.Write("  [F1] Start");
+            Console.Write("  F1-Start");
+            
+            Console.SetCursorPosition(20, 1);
+            Console.Write(" F2-Kontakty");
 
-            Console.SetCursorPosition(23, 1);
-            Console.Write(" [F2] Kontakty");
+            Console.SetCursorPosition(36, 1);
+            Console.Write("F3-Spotkania");
 
-            Console.SetCursorPosition(42, 1);
-            Console.Write("[F3] Spotkania");
+            Console.SetCursorPosition(52, 1);
+            Console.Write("  F4-Adresy");
 
-            Console.SetCursorPosition(61, 1);
-            Console.Write("  [F4] Adresy");
+            Console.SetCursorPosition(68, 1);
+            Console.Write("  F5-Alarmy");
 
-            Console.SetCursorPosition(80, 1);
-            Console.Write(" [F5] Alarmy");
+            Console.SetCursorPosition(84, 1);
+            Console.Write(" F6-Notatki");
 
-            Console.SetCursorPosition(99, 1);
-            Console.Write(" [F6] Notatki");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(100, 1);
+            Console.Write("F9-Zakończ");
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-
 
         }
     }

@@ -23,6 +23,7 @@ namespace ProjektKomunikacja
             int licznik = 0;
 
             Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.SetCursorPosition(leftRange, 4);
             for (int i = 3; i < 20; i++)
             {

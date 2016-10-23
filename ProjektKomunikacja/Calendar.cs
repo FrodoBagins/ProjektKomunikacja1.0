@@ -13,6 +13,7 @@ namespace ProjektKomunikacja
         private static int[] tab = new int[] { lr + 2, lr + 6, lr + 10, lr + 14, lr + 18, lr + 22, lr + 26 };
         private static int buffPos = 0;
         private static bool isMonth = true;
+        
 
         public Calendar() { }
 
@@ -20,6 +21,7 @@ namespace ProjektKomunikacja
         {
             Console.SetCursorPosition(0, 0);
             Console.CursorVisible = false;
+            Console.ForegroundColor = ConsoleColor.White;
             int mthcounter = 10, yrcounter = 2016;
             int dayCounter = 1; //zmienna, czy doszło do przejścia z miesięcy na dnie
             int day = 1; //którym dniem tygodnia zaczyna się mieisąc, iteracja po dniach
@@ -190,6 +192,7 @@ namespace ProjektKomunikacja
         {
             Console.ResetColor();
             Console.CursorVisible = false;
+            Console.ForegroundColor = ConsoleColor.White;
             int rightRange = (Console.WindowWidth) / 2 + 15;
             int leftRange = (Console.WindowWidth) / 2 - 14;
             DateTime date = new DateTime(data.Year, data.Month, data.Day);

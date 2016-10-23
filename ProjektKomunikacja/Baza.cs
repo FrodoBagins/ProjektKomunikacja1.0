@@ -343,13 +343,12 @@ namespace ProjektKomunikacja
             {
                 List<String> Contacts = new List<String>();
 
-                int counter=1;
+                
 
                 foreach (var contact in db.Contacts)
                 {                  
                     string temp;
-                    temp ="Imie: "+ contact.FirstName + " Nazwisko: " + contact.LastName + " Email: " + contact.Mail + " Tel.: " + contact.Phone+" Counter: "+counter;
-                    ++counter;
+                    temp ="Imie: "+ contact.FirstName + " Nazwisko: " + contact.LastName + " Email: " + contact.Mail + " Tel.: " + contact.Phone;
                     Contacts.Add(temp);
                 }
                 return Contacts;
