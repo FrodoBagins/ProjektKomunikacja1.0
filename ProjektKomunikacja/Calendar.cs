@@ -21,7 +21,6 @@ namespace ProjektKomunikacja
         {
             Console.SetCursorPosition(0, 0);
             Console.CursorVisible = false;
-            Console.ForegroundColor = ConsoleColor.White;
             int mthcounter = 10, yrcounter = 2016;
             int dayCounter = 1; //zmienna, czy doszło do przejścia z miesięcy na dnie
             int day = 1; //którym dniem tygodnia zaczyna się mieisąc, iteracja po dniach
@@ -157,8 +156,6 @@ namespace ProjektKomunikacja
 
                     DateTime czas = new DateTime(yrcounter,mthcounter,dayCounter);
 
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.Cyan;
 
                     if (whichTab == 3)
                     {
@@ -192,7 +189,6 @@ namespace ProjektKomunikacja
         {
             Console.ResetColor();
             Console.CursorVisible = false;
-            Console.ForegroundColor = ConsoleColor.White;
             int rightRange = (Console.WindowWidth) / 2 + 15;
             int leftRange = (Console.WindowWidth) / 2 - 14;
             DateTime date = new DateTime(data.Year, data.Month, data.Day);

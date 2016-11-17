@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ProjektKomunikacja
 {
@@ -811,6 +812,8 @@ namespace ProjektKomunikacja
             
 
             Functions.addButton();
+
+        
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(5, 5);
 
@@ -1000,6 +1003,7 @@ namespace ProjektKomunikacja
                 {
                     Console.SetCursorPosition(col, row+=4);
                 }
+
 
 
                //Delete
