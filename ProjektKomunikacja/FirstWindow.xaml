@@ -1,0 +1,286 @@
+﻿<Window x:Class="ProjektKomunikacja.FirstWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
+        xmlns:local="clr-namespace:ProjektKomunikacja"
+        mc:Ignorable="d"
+        Title="FirstWindow" Height="714.937" Width="1156.723"
+        Loaded="Window_Loaded">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="784*"/>
+            <ColumnDefinition Width="249*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl FontSize="20"  SelectionChanged="TabControl_SelectionChanged" Grid.ColumnSpan="5" >
+            <TabItem Background="Aquamarine" Width="150"  Header="Start">
+                <Label x:Name="label9" Content="&#xD;&#xA;Witaj w aplikacji" Margin="60,0,99,404" FontFamily="Engravers MT" FontSize="48"/>
+            </TabItem>
+            <TabItem Background="Crimson" Width="150" x:Name="KontaktyTab"     Header="Kontakty">
+                <Grid>
+                    <DataGrid x:Name="dataGrid" 
+                     HorizontalAlignment="Left" 
+                     Height="510" Margin="40,59,0,0" 
+                     VerticalAlignment="Top" Width="700"   
+                              
+                
+                  IsReadOnly="True"
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  FontSize="20">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button  Click="Delete_Contact" >
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/minus.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Click="Edit_Contact">
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/gear.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Click="add_contact" x:Name="contact_add" Content="Dodaj Kontakt" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="838,413,0,0"/>
+                    <Label x:Name="label" Content="" RenderTransformOrigin="3.55,1.48" Margin="812,479,70,76"/>
+                    <TextBox x:Name="contact_fName" TextWrapping="Wrap" Text="" Margin="812,87,32,523"/>
+                    <TextBox x:Name="contact_lName" TextWrapping="Wrap" Text="" Margin="812,163,32,447" RenderTransformOrigin="0.502,-0.171"/>
+                    <TextBox x:Name="contact_phon" TextWrapping="Wrap" Text="" Margin="812,244,32,366"/>
+                    <TextBox x:Name="contact_mail" TextWrapping="Wrap" Text="" RenderTransformOrigin="2.383,1.739" Margin="812,332,32,278"/>
+                    <Label x:Name="label1" Content="Podaj nazwisko" HorizontalAlignment="Left" Margin="812,126,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2" Content="Podaj imie" HorizontalAlignment="Left" Margin="812,45,0,0" VerticalAlignment="Top" Width="133"/>
+                    <Label x:Name="label3" Content="Podaj numer telefonu" HorizontalAlignment="Left" Margin="812,207,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label4" Content="Podaj adres e-mail" HorizontalAlignment="Left" Margin="812,295,0,0" VerticalAlignment="Top"/>
+                </Grid>
+
+
+
+            </TabItem>
+            <TabItem Background="ForestGreen" Width="150" Header="Alarmy">
+                <Grid>
+
+                    <DataGrid x:Name="dataGrid2" 
+                  HorizontalAlignment="Left" 
+                  IsReadOnly="True"
+                  Height="488" Margin="58,81,0,0"                  
+                  VerticalAlignment="Top" Width="639" 
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  FontSize="20">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button  Click="Delete_Alarm" >
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/minus.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Click="Edit_Alarm">
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/clock.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Label x:Name="alarm_lab" Content="" RenderTransformOrigin="3.55,1.48" Margin="737,479,32,76"/>
+                    <TextBox x:Name="alarm_h" TextWrapping="Wrap" Text="" Margin="719,123,32,487" RenderTransformOrigin="0.502,-0.171"/>
+                    <TextBox x:Name="alarm_m" TextWrapping="Wrap" Text="" Margin="719,223,32,386"/>
+                    <TextBox x:Name="alarm_title" TextWrapping="Wrap" Text="" RenderTransformOrigin="2.383,1.739" Margin="719,332,32,278"/>
+                    <Label x:Name="alarm_lab1" Content="Podaj minuty" HorizontalAlignment="Left" Margin="719,181,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="alarm_lab2" Content="Podaj godzinę" HorizontalAlignment="Left" Margin="721,81,0,0" VerticalAlignment="Top" Width="154"/>
+                    <Label x:Name="alarm_lab3" Content="Podaj nazwę alarmu" HorizontalAlignment="Left" Margin="719,290,0,0" VerticalAlignment="Top"/>
+                    <Button Click="add_alarm" x:Name="alarm" Content="Dodaj alarm" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="764,413,0,0"/>
+                </Grid>
+
+
+            </TabItem>
+            <TabItem Background="LightBlue" Width="150" Header="Spotkania">
+                <Grid>
+
+                    <DataGrid x:Name="dataGrid3" 
+                  HorizontalAlignment="Left" 
+                  IsReadOnly="True"
+                  Height="508" Margin="50,61,0,0" 
+                  VerticalAlignment="Top" Width="714" 
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  FontSize="20">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button  Click="Delete_Meet" >
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/minus.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Click="Edit_Meet">
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/gear.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Button Click="add_meet" x:Name="meet_add" Content="Dodaj Spotkanie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="847,484,0,0"/>
+                    <Label x:Name="meet" Content="" RenderTransformOrigin="3.55,1.48" Margin="814,520,70,35"/>
+                    <DatePicker x:Name="meet_cal"   RenderTransformOrigin="1.51,0.37" Margin="814,61,32,546"/>
+                    <TextBox x:Name="meet_h" TextWrapping="Wrap" Text="" Margin="814,165,32,445"/>
+                    <TextBox x:Name="meet_m" TextWrapping="Wrap" Text="" Margin="814,237,32,373" RenderTransformOrigin="0.502,-0.171"/>
+                    <TextBox x:Name="meet_place" TextWrapping="Wrap" Text="" Margin="814,319,32,291"/>
+                    <TextBox x:Name="meet_whom" TextWrapping="Wrap" Text="" RenderTransformOrigin="2.383,1.739" Margin="814,401,32,209"/>
+                    <Label x:Name="label5" Content="Podaj minuty" HorizontalAlignment="Left" Margin="814,195,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label6" Content="Podaj godzinę" HorizontalAlignment="Left" Margin="814,123,0,0" VerticalAlignment="Top" Width="142"/>
+                    <Label x:Name="label7" Content="Podaj miejse" HorizontalAlignment="Left" Margin="814,277,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label8" Content="Podaj podaj osobę" HorizontalAlignment="Left" Margin="814,359,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+
+            </TabItem>
+            <TabItem Background="Gray" Width="150" Header="Notatki">
+                <Grid>
+
+                    <DataGrid x:Name="dataGrid4" 
+                  HorizontalAlignment="Left" 
+                  IsReadOnly="True"
+                  Height="507" Margin="58,62,0,0" 
+                  VerticalAlignment="Top" Width="669" 
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  FontSize="20">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button  Click="Delete_Note" >
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/minus.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Click="Edit_Note">
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/gear.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+
+                    </DataGrid>
+                    <Label x:Name="note" Content="" RenderTransformOrigin="3.55,1.48" Margin="788,520,46,35"/>
+                    <Button Click="add_note" x:Name="note_add" Content="Dodaj notatkę" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="848,484,0,0"/>
+                    <Label x:Name="note_lab1" Content="Podaj nazwę notatki" Margin="806,78,137,524"/>
+                    <Label x:Name="note_lab2" Content="Podaj treść notatki" Margin="806,192,137,413"/>
+                    <TextBox x:Name="note_sub" TextWrapping="Wrap" Text="" Margin="806,126,70,483"/>
+                    <TextBox x:Name="note_body" TextWrapping="Wrap" Text="" RenderTransformOrigin="2.925,3.5" Margin="806,237,70,189"/>
+                </Grid>
+
+
+            </TabItem>
+
+            <TabItem Background="Orange" Width="150" Header="Adresy">
+                <Grid>
+
+                    <DataGrid x:Name="dataGrid5" 
+                  HorizontalAlignment="Left" 
+                  IsReadOnly="True"
+                  Height="503" Margin="48,66,0,0" 
+                  VerticalAlignment="Top" Width="690" 
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  FontSize="20">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button  Click="Delete_Address" >
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/minus.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Click="Edit_Address">
+                                            <StackPanel>
+                                                <Image Width = "25" Height = "25" Source="/gear.png" />
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Button Click="add_address" x:Name="address_add" Content="Dodaj adres" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="764,413,0,0"/>
+                    <Label x:Name="adres_lab" Content="" RenderTransformOrigin="3.55,1.48" Margin="764,479,70,76"/>
+                    <TextBox x:Name="address_comp" TextWrapping="Wrap" Text="" Margin="764,87,32,523"/>
+                    <TextBox x:Name="address_town" TextWrapping="Wrap" Text="" Margin="764,163,32,447" RenderTransformOrigin="0.502,-0.171"/>
+                    <TextBox x:Name="address_street" TextWrapping="Wrap" Text="" Margin="764,244,32,366"/>
+                    <TextBox x:Name="address_phon" TextWrapping="Wrap" Text="" RenderTransformOrigin="2.383,1.739" Margin="764,332,32,278"/>
+
+                    <Label x:Name="address_lab1" Content="Podaj miasto" HorizontalAlignment="Left" Margin="764,127,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="address_lab2" Content="Podaj nazwę firmy" HorizontalAlignment="Left" Margin="764,45,0,0" VerticalAlignment="Top" Width="174"/>
+                    <Label x:Name="address_lab3" Content="Podaj nazwę ulicy" HorizontalAlignment="Left" Margin="764,207,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="address_lab4" Content="Podaj numer telefonu" HorizontalAlignment="Left" Margin="764,295,0,0" VerticalAlignment="Top" Width="222"/>
+
+
+                </Grid>
+
+
+            </TabItem>
+            
+
+
+        </TabControl>
+    </Grid>
+
+</Window>

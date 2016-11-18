@@ -228,13 +228,13 @@ namespace ProjektKomunikacja
                 foreach (var contact in db.Contacts)
                 {                    
                     if(counter == id)
-                    {                        
+                    {                                              
                         db.Contacts.Remove(contact);
                         break;
                     }                   
                     ++counter;                  
                 }
-               db.SaveChanges();
+                db.SaveChangesAsync();
             }
         }
 
@@ -253,6 +253,7 @@ namespace ProjektKomunikacja
                     }
                     ++counter;
                 }
+
                 db.SaveChanges();
             }
         }
@@ -314,8 +315,75 @@ namespace ProjektKomunikacja
             }
         }
 
+        public static List<Contact> ContactList2()
+        {
+            using (var db = new ContactDbContext())
+            {
+                List<Contact> Contacts = new List<Contact>();
 
+                foreach (var contact in db.Contacts)
+                {
+                    Contacts.Add(contact);           
+                }
+                return Contacts;
+            }
+        }
 
+        public static List<Alarm> AlarmList2()
+        {
+            using (var db = new AlarmDbContext())
+            {
+                List<Alarm> Alarms = new List<Alarm>();
+
+                foreach (var alarm in db.Alarms)
+                {
+                    Alarms.Add(alarm);
+                }
+                return Alarms;
+            }
+        }
+        
+        public static List<Meet> MeetList2()
+        {
+            using (var db = new MeetDbContext())
+            {
+                List<Meet> Meetings = new List<Meet>();
+
+                foreach (var meet in db.Meetings)
+                {
+                    Meetings.Add(meet);
+                }
+                return Meetings;
+            }
+        }
+      
+        public static List<Note> NoteList2()
+        {
+            using (var db = new NoteDbContext())
+            {
+                List<Note> Notes = new List<Note>();
+
+                foreach (var note in db.Notes)
+                {
+                    Notes.Add(note);
+                }
+                return Notes;
+            }
+        }
+     
+        public static List<Address> AddressList2()
+        {
+            using (var db = new AddressDbContext())
+            {
+                List<Address> Addresses = new List<Address>();
+
+                foreach (var address in db.Addresses)
+                {
+                    Addresses.Add(address);
+                }
+                return Addresses;
+            }
+        }
 
         public static List<String> MeetList()
         {
